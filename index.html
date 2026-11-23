@@ -47,7 +47,7 @@ a.gold{background:#fbf7ed;border-color:#eadbb8;color:#72591f}
 <select id="branch" aria-label="اختر الفرع">
 <option value="mansoura">المنزلة – الدقهلية</option>
 <option value="husseiniya">الحسينية – الشرقية</option>
-<option value="rawdah">الروضة – دمياط</option>
+<option value="rawdah">نقطة استلام الروضة – دمياط</option>
 </select>
 </div>
 <h2 class="section-title">تواصل مع الفرع</h2>
@@ -88,9 +88,9 @@ a.gold{background:#fbf7ed;border-color:#eadbb8;color:#72591f}
 <script>
 const branch=document.getElementById('branch');
 const map={
- mansoura:{wa:'201550221951',phone:'201091895649'},
- husseiniya:{wa:'201550221951',phone:'201062658455'},
- rawdah:{wa:'201550221951',phone:'201550221951'}
+ mansoura:{wa:'201550221951',phone:'201091895649',url:'https://maps.app.goo.gl/GmRsHDzAtVmJLrr28?g_st=aw',hint:'موقع فرع المنزلة – الدقهلية'},
+ husseiniya:{wa:'201550221951',phone:'201062658455',url:'https://maps.app.goo.gl/rzrfcCtuMqJpiYpa8?g_st=aw',hint:'موقع فرع سعود – الحسينية – الشرقية'},
+ rawdah:{wa:'201550221951',phone:'201550221951',url:'https://maps.app.goo.gl/sTTHDb9cDS5UMy6m9?g_st=aw',hint:'نقطة استلام الروضة – دمياط'}
 };
 const params=new URLSearchParams(location.search);
 if(params.get('branch') && map[params.get('branch')]) branch.value=params.get('branch');
@@ -100,7 +100,8 @@ function apply(){
  document.getElementById('call1').href='tel:+201091895649';
  document.getElementById('call2').href='tel:+201062658455';
  document.getElementById('call3').href='tel:+201550221951';
-}
+}document.getElementById('mapLink').href=b.url;
+document.getElementById('mapHint').textContent=b.hint+' — افتح الرابط لعرض الموقع والاتجاهات.';
 branch.addEventListener('change',apply);apply();
 </script>
 </body></html>
