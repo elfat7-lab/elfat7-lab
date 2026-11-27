@@ -125,6 +125,46 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 @media(max-width:760px){.quick-nav{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding:10px 2px 14px;margin:0 -2px 20px;scrollbar-width:thin}.quick-nav a{white-space:nowrap;padding:8px 13px}.hero{min-height:0}.section-card{border-radius:17px}.section-icon{width:38px;height:38px}.intro-row h2{font-size:21px}}
 @media(max-width:390px){.quick-nav a{font-size:12px}.hero{padding-left:17px;padding-right:17px}.hero-tag{font-size:12px}}
 
+
+
+/* Mobile refinement based on device screenshot */
+@media(max-width:760px){
+ .page-shell{padding:10px 10px 24px}
+ .main-content{padding:21px 15px 24px}
+ .quick-nav{
+   justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;
+   gap:7px;padding:8px 1px 12px;margin:0 -1px 17px;
+   scrollbar-width:none;-ms-overflow-style:none;
+   border-bottom:1px solid #edf1ee;
+   overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+ }
+ .quick-nav::-webkit-scrollbar{display:none;width:0;height:0}
+ .quick-nav a{flex:0 0 auto;white-space:nowrap;padding:7px 13px;font-size:13px;line-height:1.5}
+ .intro-row{margin-bottom:19px}
+ .intro-row h2{font-size:20px;line-height:1.5}
+ .intro-row p{font-size:13px;line-height:1.7}
+ .branch-panel{margin-top:13px;padding:12px 15px;min-height:78px}
+ .sections-grid{gap:12px}
+ .section-card{padding:19px;border-radius:17px}
+ .section-heading{gap:10px;margin-bottom:14px;font-size:17px}
+ .section-icon{width:37px;height:37px;border-radius:11px}
+ .feature-grid{gap:10px}
+ .feature{padding:15px 16px;border-radius:14px}
+ .feature strong{font-size:14.5px;margin-bottom:4px}
+ .feature p{font-size:13px;line-height:1.8}
+ .service-note{margin-top:11px;padding:10px 12px;font-size:12.5px}
+ .request-form{gap:10px}
+ .faq-list{gap:8px}
+ .faq-list details{padding:12px 14px}
+}
+@media(max-width:390px){
+ .page-shell{padding:8px 8px 20px}
+ .main-content{padding:18px 12px 21px}
+ .quick-nav{gap:6px;margin-bottom:14px}
+ .quick-nav a{padding:7px 11px;font-size:12.5px}
+ .section-card{padding:16px}
+ .feature{padding:13px 14px}
+}
 </style>
 </head>
 <body>
@@ -158,7 +198,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </div>
 
 <section class="section-card wide" id="services">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg></span>خدماتنا التشخيصية</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>خدماتنا التشخيصية</h2>
 <div class="feature-grid">
 <div class="feature"><strong>الفحص والتشريح المرضي</strong><p>تقييم التغيرات الظاهرية والتشريحية وربطها بتاريخ الحالة وأعراضها.</p></div>
 <div class="feature"><strong>العزل البكتيري</strong><p>فحوصات معملية للمساعدة في تحديد المسببات البكتيرية المرتبطة بالحالة.</p></div>
