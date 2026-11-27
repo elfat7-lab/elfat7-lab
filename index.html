@@ -57,6 +57,11 @@ a.gold{background:#fbf7ed;border-color:#eadbb8;color:#72591f}
 <a class="btn" id="call2" href="tel:+201062658455">اتصال: <span class="phone">0106 265 8455</span></a>
 <a class="btn full" id="call3" href="tel:+201550221951">اتصال: <span class="phone">0155 022 1951</span></a>
 </div>
+<h2 class="section-title">موقع الفرع على الخريطة</h2>
+<div class="grid">
+<a class="btn primary full" id="mapLink" href="#" target="_blank" rel="noopener noreferrer">📍 افتح موقع الفرع على Google Maps</a>
+</div>
+<p class="note" id="mapHint">اضغط لعرض موقع الفرع والاتجاهات إليه.</p>
 <h2 class="section-title">تابع صفحاتنا</h2>
 <div class="grid">
 <a class="btn" href="https://www.facebook.com/Elfat7.Lab" target="_blank" rel="noopener">Facebook</a>
@@ -100,8 +105,9 @@ function apply(){
  document.getElementById('call1').href='tel:+201091895649';
  document.getElementById('call2').href='tel:+201062658455';
  document.getElementById('call3').href='tel:+201550221951';
-}document.getElementById('mapLink').href=b.url;
-document.getElementById('mapHint').textContent=b.hint+' — افتح الرابط لعرض الموقع والاتجاهات.';
+ document.getElementById('mapLink').href=b.url;
+ document.getElementById('mapHint').textContent=b.hint+' — افتح الرابط لعرض الموقع والاتجاهات.';
+}
 branch.addEventListener('change',apply);apply();
 </script>
 </body></html>
