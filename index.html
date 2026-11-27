@@ -72,9 +72,15 @@ a.gold{background:#fbf7ed;border-color:#eadbb8;color:#72591f}
 <h2 class="section-title">الدفع والتحويل</h2>
 <div class="pay">
 <p><strong>InstaPay</strong><br><span dir="ltr" style="display:inline-block;font-size:15px;color:#17302c">dr.mohamed.ahmed.93</span></p>
+<div class="pay-actions">
+<button class="btn primary full" type="button" onclick="openPaymentApp('instapay','dr.mohamed.ahmed.93')">فتح تطبيق InstaPay</button>
 <button class="btn gold full" type="button" onclick="copyPayment('dr.mohamed.ahmed.93')">نسخ عنوان InstaPay</button>
+</div>
 <p style="margin-top:14px"><strong>Vodafone Cash</strong><br><span class="phone" style="font-size:15px;color:#17302c">01061652263</span></p>
+<div class="pay-actions">
+<button class="btn primary full" type="button" onclick="openPaymentApp('vodafone','01061652263')">فتح تطبيق Ana Vodafone</button>
 <button class="btn gold full" type="button" onclick="copyPayment('01061652263')">نسخ رقم فودافون كاش</button>
+</div>
 <p style="margin-top:14px">بعد التحويل، يُرجى إرسال صورة الإيصال عبر واتساب المعمل لتأكيد استلام المبلغ.</p>
 <a class="btn primary full" href="https://wa.me/201550221951?text=%D8%AA%D9%85%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%8C%20%D9%88%D8%A3%D8%B1%D8%B3%D9%84%20%D8%A5%D9%8A%D8%B5%D8%A7%D9%84%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D9%84%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF." target="_blank" rel="noopener">إرسال إيصال التحويل عبر واتساب</a>
 </div>
@@ -109,7 +115,26 @@ function apply(){
 }
 async function copyPayment(value){
  try{await navigator.clipboard.writeText(value);alert('تم نسخ بيانات التحويل.');}
- catch(e){alert('تعذر النسخ تلقائيًا. يمكنك تحديد البيانات ونسخها يدويًا.');}
+ catch(e){
+  const field=document.createElement('textarea');field.value=value;document.body.appendChild(field);field.select();
+  try{document.execCommand('copy');alert('تم نسخ بيانات التحويل.');}
+  catch(err){alert('تعذر النسخ تلقائيًا. يمكنك تحديد البيانات ونسخها يدويًا.');}
+  field.remove();
+ }
+}
+async function openPaymentApp(type,value){
+ await copyPayment(value);
+ const targets={
+  instapay:'intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.egyptianbanks.instapay;end',
+  vodafone:'intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.egyptianapps.vodafone;end'
+ };
+ const label=type==='instapay'?'InstaPay':'Ana Vodafone';
+ const start=Date.now();
+ window.location.href=targets[type];
+ setTimeout(()=>{
+  if(Date.now()-start<1800)return;
+  alert('إذا لم يفتح التطبيق، تأكد من تثبيته على هاتفك. بيانات التحويل نُسخت ويمكنك لصقها يدويًا داخل التطبيق.');
+ },1400);
 }
 branch.addEventListener('change',apply);apply();
 </script>
