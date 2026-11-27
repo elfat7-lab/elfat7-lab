@@ -203,7 +203,7 @@ async function openPaymentApp(type,value){
  await copyPayment(value);
  const targets={
   instapay:'intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.egyptianbanks.instapay;end',
-  vodafone:'intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.egyptianapps.vodafone;end'
+  vodafone:'intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.emeint.android.myservices;end'
  };
  window.location.href=targets[type];
 }
