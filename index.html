@@ -71,7 +71,12 @@ a.gold{background:#fbf7ed;border-color:#eadbb8;color:#72591f}
 </div>
 <h2 class="section-title">الدفع والتحويل</h2>
 <div class="pay">
-<p>يمكنك التحويل مباشرة إلى المعمل عبر InstaPay أو المحفظة الإلكترونية دون الحاجة إلى شركة وسيطة. ستُعرض بيانات التحويل المعتمدة هنا عند إضافتها، ثم يُرسل إيصال التحويل للمعمل لتأكيد السداد.</p>
+<p><strong>InstaPay</strong><br><span dir="ltr" style="display:inline-block;font-size:15px;color:#17302c">dr.mohamed.ahmed.93</span></p>
+<button class="btn gold full" type="button" onclick="copyPayment('dr.mohamed.ahmed.93')">نسخ عنوان InstaPay</button>
+<p style="margin-top:14px"><strong>Vodafone Cash</strong><br><span class="phone" style="font-size:15px;color:#17302c">01061652263</span></p>
+<button class="btn gold full" type="button" onclick="copyPayment('01061652263')">نسخ رقم فودافون كاش</button>
+<p style="margin-top:14px">بعد التحويل، يُرجى إرسال صورة الإيصال عبر واتساب المعمل لتأكيد استلام المبلغ.</p>
+<a class="btn primary full" href="https://wa.me/201550221951?text=%D8%AA%D9%85%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%8C%20%D9%88%D8%A3%D8%B1%D8%B3%D9%84%20%D8%A5%D9%8A%D8%B5%D8%A7%D9%84%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D9%84%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF." target="_blank" rel="noopener">إرسال إيصال التحويل عبر واتساب</a>
 </div>
 <h2 class="section-title">عناوين الفروع</h2>
 <div class="note">
@@ -101,6 +106,10 @@ function apply(){
  document.getElementById('call3').href='tel:+201550221951';
  document.getElementById('mapLink').href=b.url;
  document.getElementById('mapHint').textContent=b.hint+' — افتح الرابط لعرض الموقع والاتجاهات.';
+}
+async function copyPayment(value){
+ try{await navigator.clipboard.writeText(value);alert('تم نسخ بيانات التحويل.');}
+ catch(e){alert('تعذر النسخ تلقائيًا. يمكنك تحديد البيانات ونسخها يدويًا.');}
 }
 branch.addEventListener('change',apply);apply();
 </script>
