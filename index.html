@@ -37,7 +37,22 @@ h1{font-size:clamp(27px,3.2vw,42px);line-height:1.35;margin:0 0 14px;font-weight
 select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);font-weight:800;font-size:15px}
 .sections-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .section-card{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff;min-width:0}
-.section-card.wide{grid-column:1/-1}\n.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}\n.feature{padding:18px;border:1px solid var(--line);border-radius:15px;background:#fbfcfb}\n.feature strong{display:block;color:var(--forest);font-size:15px;margin-bottom:6px}\n.feature p{margin:0;color:var(--muted);font-size:13px;line-height:1.9}\n.service-note{margin:14px 0 0;padding:12px 15px;border-radius:12px;background:var(--gold-soft);color:#735a22;font-size:13px}\n.request-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}\n.request-form label{display:block;color:var(--muted);font-size:13px;font-weight:700}\n.request-form input,.request-form select,.request-form textarea{width:100%;margin-top:5px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-size:14px;outline-color:var(--gold)}\n.request-form textarea{min-height:95px;resize:vertical}\n.request-form .full{grid-column:1/-1}\n.faq-list{display:grid;gap:10px}\n.faq-list details{padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#fbfcfb}\n.faq-list summary{cursor:pointer;color:var(--forest);font-weight:800}\n.faq-list p{margin:9px 0 0;color:var(--muted);font-size:13px}\n@media(max-width:760px){.feature-grid{grid-template-columns:1fr}.request-form{grid-template-columns:1fr}.request-form .full{grid-column:auto}}
+.section-card.wide{grid-column:1/-1}
+.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.feature{padding:18px;border:1px solid var(--line);border-radius:15px;background:#fbfcfb}
+.feature strong{display:block;color:var(--forest);font-size:15px;margin-bottom:6px}
+.feature p{margin:0;color:var(--muted);font-size:13px;line-height:1.9}
+.service-note{margin:14px 0 0;padding:12px 15px;border-radius:12px;background:var(--gold-soft);color:#735a22;font-size:13px}
+.request-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.request-form label{display:block;color:var(--muted);font-size:13px;font-weight:700}
+.request-form input,.request-form select,.request-form textarea{width:100%;margin-top:5px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-size:14px;outline-color:var(--gold)}
+.request-form textarea{min-height:95px;resize:vertical}
+.request-form .full{grid-column:1/-1}
+.faq-list{display:grid;gap:10px}
+.faq-list details{padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#fbfcfb}
+.faq-list summary{cursor:pointer;color:var(--forest);font-weight:800}
+.faq-list p{margin:9px 0 0;color:var(--muted);font-size:13px}
+@media(max-width:760px){.feature-grid{grid-template-columns:1fr}.request-form{grid-template-columns:1fr}.request-form .full{grid-column:auto}}
 .section-heading{display:flex;align-items:center;gap:12px;margin:0 0 18px;color:var(--forest);font-size:18px;font-weight:800}
 .section-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:var(--forest-soft);color:var(--forest);font-size:18px;flex:0 0 auto}
 .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -82,9 +97,38 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
  .section-card{padding:18px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Final visual and accessibility refinement */
+:root{--radius-card:20px;--focus:0 0 0 3px #c5a35b55}
+body{font-size:15px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:#d9c28c;color:#17332e}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:0;box-shadow:var(--focus)}
+.skip-link{position:fixed;z-index:1000;top:10px;right:10px;padding:10px 16px;border-radius:10px;background:#fff;color:var(--forest);transform:translateY(-160%);box-shadow:var(--shadow)}
+.skip-link:focus{transform:translateY(0)}
+.quick-nav{position:sticky;top:0;z-index:20;display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:13px 0 18px;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid #e8eeea;margin:0 0 26px}
+.quick-nav a{padding:8px 15px;border:1px solid var(--line);border-radius:999px;color:var(--forest);background:#fff;text-decoration:none;font-size:13px;font-weight:800;transition:background .18s,border-color .18s,color .18s}
+.quick-nav a:hover{background:var(--forest);border-color:var(--forest);color:#fff}
+.section-card{box-shadow:0 5px 20px rgba(16,47,43,.035);transition:box-shadow .2s,border-color .2s}
+.section-card:hover{border-color:#d4e1da;box-shadow:0 12px 30px rgba(16,47,43,.065)}
+.section-icon{width:42px;height:42px;border-radius:13px}
+.section-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feature{height:100%;transition:transform .18s,border-color .18s,background .18s}
+.feature:hover{transform:translateY(-2px);border-color:#d4e1da;background:#fff}
+.feature strong{font-size:15px;line-height:1.6}
+.feature p{font-size:13.5px}
+.section-heading{line-height:1.5}
+.btn:active{transform:translateY(0) scale(.99)}
+.address{height:100%}
+.payment-card{box-shadow:inset 0 1px #fff}
+.footer{border-top:1px solid var(--line);margin-top:18px;padding-top:22px}
+@media(min-width:761px){.main-content{padding:32px 48px 46px}.quick-nav{margin-left:-48px;margin-right:-48px;padding-left:24px;padding-right:24px}.hero{min-height:360px}}
+@media(max-width:760px){.quick-nav{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding:10px 2px 14px;margin:0 -2px 20px;scrollbar-width:thin}.quick-nav a{white-space:nowrap;padding:8px 13px}.hero{min-height:0}.section-card{border-radius:17px}.section-icon{width:38px;height:38px}.intro-row h2{font-size:21px}}
+@media(max-width:390px){.quick-nav a{font-size:12px}.hero{padding-left:17px;padding-right:17px}.hero-tag{font-size:12px}}
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">تجاوز إلى المحتوى</a>
 <div class="page-shell">
 <div class="site-card">
 <header class="hero">
@@ -98,7 +142,9 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 <img class="logo" src="logo-elfat7-transparent.png" alt="الشعار الأصلي لمعمل الفتح لتشخيص أمراض الدواجن">
 </div>
 </header>
-<main class="main-content">
+<main class="main-content" id="main-content"><nav class="quick-nav" aria-label="التنقل داخل الموقع">
+<a href="#services">الخدمات</a><a href="#why-us">لماذا المعمل؟</a><a href="#request">طلب فحص</a><a href="#faq">الأسئلة الشائعة</a><a href="#contact">التواصل والفروع</a>
+</nav>
 <div class="intro-row">
 <div><h2>خدمات المعمل ووسائل التواصل</h2><p>اختر الفرع أولًا لتظهر لك بيانات التواصل والموقع.</p></div>
 <div class="branch-panel">
@@ -112,7 +158,7 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 </div>
 
 <section class="section-card wide" id="services">
-<h2 class="section-heading"><span class="section-icon">✚</span>خدماتنا التشخيصية</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg></span>خدماتنا التشخيصية</h2>
 <div class="feature-grid">
 <div class="feature"><strong>الفحص والتشريح المرضي</strong><p>تقييم التغيرات الظاهرية والتشريحية وربطها بتاريخ الحالة وأعراضها.</p></div>
 <div class="feature"><strong>العزل البكتيري</strong><p>فحوصات معملية للمساعدة في تحديد المسببات البكتيرية المرتبطة بالحالة.</p></div>
@@ -124,7 +170,7 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 <p class="service-note">تُحدد الفحوصات المناسبة بعد مراجعة الحالة ونوع العينة، وتُؤكد إتاحة كل اختبار ومدته بالتواصل مع المعمل.</p>
 </section>
 <section class="section-card wide" id="why-us">
-<h2 class="section-heading"><span class="section-icon">✓</span>لماذا معمل الفتح؟</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span>لماذا معمل الفتح؟</h2>
 <div class="feature-grid">
 <div class="feature"><strong>التشخيص أساس القرار</strong><p>الاهتمام بالوصول إلى المسبب، وليس الاكتفاء بتشابه الأعراض.</p></div>
 <div class="feature"><strong>أكثر من أداة للفحص</strong><p>الاستفادة من الفحص والتشريح والاختبارات المعملية بحسب متطلبات كل حالة.</p></div>
@@ -132,7 +178,7 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 </div>
 </section>
 <section class="section-card wide" id="request">
-<h2 class="section-heading"><span class="section-icon">✉</span>طلب فحص أو استفسار</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>طلب فحص أو استفسار</h2>
 <form class="request-form" id="requestForm">
 <label>الاسم<input name="name" required autocomplete="name" placeholder="اسمك"></label>
 <label>رقم الهاتف<input name="phone" required type="tel" inputmode="tel" placeholder="رقم للتواصل"></label>
@@ -146,7 +192,7 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 <p class="helper">سيتم فتح واتساب برسالة تحتوي على البيانات التي أدخلتها لمراجعتها وإرسالها بنفسك. لا تُرسل بيانات حساسة.</p>
 </section>
 <section class="section-card wide" id="faq">
-<h2 class="section-heading"><span class="section-icon">؟</span>أسئلة شائعة</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.8c-1.1 1-1.9 1.4-1.9 3M12 17.5h.01"/></svg></span>أسئلة شائعة</h2>
 <div class="faq-list">
 <details><summary>كيف أعرف الفحص المناسب للحالة؟</summary><p>أرسل وصفًا مختصرًا للحالة وبيانات القطيع للمعمل، وسيتم إرشادك إلى الفحص المناسب وفق المعلومات المتاحة.</p></details>
 <details><summary>ما نوع العينات المطلوبة؟</summary><p>تختلف العينة حسب الفحص والاشتباه التشخيصي؛ يُرجى التواصل مع المعمل قبل تجهيز العينة لتحديد النوع وطريقة الحفظ والنقل.</p></details>
@@ -156,8 +202,8 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 </div>
 </section>
 <div class="sections-grid">
-<section class="section-card">
-<h2 class="section-heading"><span class="section-icon">☎</span>تواصل مع المعمل</h2>
+<section class="section-card" id="contact">
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-7-7l3-2-2-5Z"/></svg></span>تواصل مع المعمل</h2>
 <div class="actions">
 <a class="btn btn-primary btn-full" id="wa" href="https://wa.me/201550221951" target="_blank" rel="noopener">واتساب المعمل</a>
 <a class="btn" id="call1" href="tel:+201091895649">0109 189 5649</a>
@@ -166,14 +212,14 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 </div>
 </section>
 <section class="section-card">
-<h2 class="section-heading"><span class="section-icon">⌖</span>موقع الفرع</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>موقع الفرع</h2>
 <div class="map-box">
 <a class="btn btn-primary btn-full" id="mapLink" href="#" target="_blank" rel="noopener noreferrer">افتح موقع الفرع على Google Maps</a>
 <p class="helper" id="mapHint">اضغط لعرض موقع الفرع والاتجاهات إليه.</p>
 </div>
 </section>
 <section class="section-card">
-<h2 class="section-heading"><span class="section-icon">◎</span>تابع صفحاتنا</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span>تابع صفحاتنا</h2>
 <div class="actions social-actions">
 <a class="btn" href="https://www.facebook.com/Elfat7.Lab" target="_blank" rel="noopener noreferrer">Facebook</a>
 <a class="btn" href="https://www.instagram.com/elfat7.lab" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -182,7 +228,7 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 </div>
 </section>
 <section class="section-card">
-<h2 class="section-heading"><span class="section-icon">◇</span>الدفع والتحويل</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2" transform="rotate(45 12 12)"/><path d="M8 12h8M12 8v8"/></svg></span>الدفع والتحويل</h2>
 <div class="payment-card">
 <div class="payment-item">
 <span class="payment-label">InstaPay</span>
@@ -205,7 +251,7 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 </div>
 </section>
 <section class="section-card wide">
-<h2 class="section-heading"><span class="section-icon">⌂</span>عناوين الفروع ونقاط الاستلام</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1Z"/></svg></span>عناوين الفروع ونقاط الاستلام</h2>
 <div class="address-list">
 <div class="address"><strong>فرع المنزلة – الدقهلية</strong><span>شارع الرياح، بجوار مسجد عبد القادر سويدان.</span></div>
 <div class="address"><strong>فرع سعود – الحسينية – الشرقية</strong><span>دائري سعود، بجوار مضيفة رسلان.</span></div>
