@@ -295,12 +295,10 @@ html[lang="en"] .hero .hero-sub{line-height:1.8}
 }
 
 
-/* Prevent accidental mobile tap highlighting on interface controls */
+/* Chrome Android: prevent accidental text selection while tapping the page */
 html,body{-webkit-tap-highlight-color:transparent}
-a,button,select,summary,.section-icon,.language-switch{
- -webkit-tap-highlight-color:transparent;
-}
-button,a,select,summary{-webkit-user-select:none;user-select:none}
+body{-webkit-user-select:none;user-select:none}
+input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-select:text}
 
 </style>
 </head>
