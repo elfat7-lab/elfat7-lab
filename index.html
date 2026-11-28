@@ -232,6 +232,27 @@ html[lang="en"] .payment-actions{direction:ltr}
  html[lang="en"] .section-heading{justify-content:flex-start}
 }
 
+
+/* Refined bilingual language control */
+.hero{position:relative}
+.language-switch{
+ position:absolute;top:18px;right:22px;z-index:5;
+ display:inline-flex;align-items:center;justify-content:center;gap:10px;
+ margin:0;padding:6px 13px;border:1px solid rgba(238,232,211,.28);
+ border-radius:999px;background:rgba(5,42,36,.42);
+ color:#e9e2cf;font-size:12px;line-height:1.4;
+ backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)
+}
+.lang-option{padding:3px 2px;color:#f4f0e5;font-size:12px;font-weight:700;opacity:.7}
+.lang-option.active{opacity:1;color:#f2d99b;text-decoration:none}
+.lang-option:focus-visible{outline:2px solid #f2d99b;outline-offset:3px;border-radius:4px}
+html[lang="en"] .language-switch{right:auto;left:22px}
+@media(max-width:760px){
+ .language-switch{top:13px;right:13px;gap:8px;padding:5px 11px;font-size:11px}
+ .lang-option{font-size:11px}
+ html[lang="en"] .language-switch{right:auto;left:13px}
+}
+
 </style>
 </head>
 <body>
@@ -239,7 +260,8 @@ html[lang="en"] .payment-actions{direction:ltr}
 <div class="page-shell">
 <div class="site-card">
 <header class="hero">
-<div class="brand-copy">\n<div class="language-switch" aria-label="Language selection"><button type="button" id="langAr" class="lang-option active" aria-pressed="true">العربية</button><span aria-hidden="true">|</span><button type="button" id="langEn" class="lang-option" aria-pressed="false">English</button></div>
+<div class="language-switch" aria-label="Language selection"><button type="button" id="langAr" class="lang-option active" aria-pressed="true">العربية</button><span aria-hidden="true">|</span><button type="button" id="langEn" class="lang-option" aria-pressed="false">English</button></div>
+<div class="brand-copy">
 <div class="eyebrow" data-i18n="eyebrow">تشخيص معملي موثوق • خدمة ومتابعة</div>
 <h1 data-i18n="heroTitle">معمل الفتح لتشخيص أمراض الدواجن</h1>
 <p class="hero-sub" data-i18n="heroSub">العلم أساس التشخيص السليم والقرار الصحيح. تواصل مع أقرب فرع، واعرف موقعه، واطّلع على وسائل الدفع المعتمدة.</p>
