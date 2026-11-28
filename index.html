@@ -488,8 +488,14 @@ async function openPaymentApp(type,value){
 }
 document.getElementById('requestForm').addEventListener('submit',function(e){
  e.preventDefault();
- const d=new FormData(this);
- const lines=['طلب فحص / استفسار - معمل الفتح','الاسم: '+(d.get('name')||''),'الهاتف: '+(d.get('phone')||''),'نوع الطيور: '+(d.get('birds')||'غير محدد'),'العمر: '+(d.get('age')||'غير محدد'),'المحافظة: '+(d.get('governorate')||'غير محددة'),'الفرع/نقطة الاستلام: '+(d.get('branch')||''),'تفاصيل الحالة: '+(d.get('details')||'لم يُذكر')];
+ const d=new FormData(this),t=translations[document.documentElement.lang]||translations.ar;
+ const lines=[
+  t.formTitle,t.formName+': '+(d.get('name')||''),t.formPhone+': '+(d.get('phone')||''),
+  t.formBirds+': '+(d.get('birds')||t.notSpecified),t.formAge+': '+(d.get('age')||t.notSpecified),
+  t.formGovernorate+': '+(d.get('governorate')||t.notSpecified),
+  t.formLocation+': '+(document.querySelector('select[name="branch"] option:checked')?.textContent||''),
+  t.formDetails+': '+(d.get('details')||t.notProvided)
+ ];
  window.open('https://wa.me/201550221951?text='+encodeURIComponent(lines.join('\\n')),'_blank','noopener');
 });
 
@@ -521,7 +527,7 @@ document.getElementById('langAr').addEventListener('click',()=>setLanguage('ar')
 document.getElementById('langEn').addEventListener('click',()=>setLanguage('en'));
 
 branch.addEventListener('change',applyBranch);
-applyBranch();
+setLanguage(localStorage.getItem('elfat7-language')||'ar');
 </script>
 </body>
 </html>
