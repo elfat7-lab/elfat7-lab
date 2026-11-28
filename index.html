@@ -300,6 +300,11 @@ html,body{-webkit-tap-highlight-color:transparent}
 body{-webkit-user-select:none;user-select:none}
 input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-select:text}
 
+
+/* Diagnostic case studies preview */
+.cases-preview-row{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:18px;padding:18px 20px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(110deg,#fff 0%,var(--forest-soft) 100%)}
+.cases-preview-row strong,.cases-preview-row span{display:block}.cases-preview-row strong{color:var(--forest);font-size:15px;margin-bottom:4px}.cases-preview-row span{color:var(--muted);font-size:13px;line-height:1.8}.cases-preview-row .btn{flex:0 0 auto}
+@media(max-width:600px){.cases-preview-row{align-items:stretch;flex-direction:column}.cases-preview-row .btn{width:100%}}
 </style>
 </head>
 <body>
@@ -319,7 +324,7 @@ input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-sel
 </div>
 </header>
 <main class="main-content" id="main-content"><nav class="quick-nav" aria-label="التنقل داخل الموقع" data-i18n-aria="navLabel">
-<a href="#services" data-i18n="navServices">الخدمات</a><a href="#why-us" data-i18n="navWhy">لماذا المعمل؟</a><a href="#request" data-i18n="navRequest">طلب فحص</a><a href="#faq" data-i18n="navFaq">الأسئلة الشائعة</a><a href="#contact" data-i18n="navContact">التواصل والفروع</a>
+<a href="#services" data-i18n="navServices">الخدمات</a><a href="case-studies.html" data-i18n="navCases">الحالات التشخيصية</a><a href="#why-us" data-i18n="navWhy">لماذا المعمل؟</a><a href="#request" data-i18n="navRequest">طلب فحص</a><a href="#faq" data-i18n="navFaq">الأسئلة الشائعة</a><a href="#contact" data-i18n="navContact">التواصل والفروع</a>
 </nav>
 <div class="intro-row">
 <div><h2 data-i18n="introTitle">خدمات المعمل ووسائل التواصل</h2><p data-i18n="introSub">اختر الفرع أولًا لتظهر لك بيانات التواصل والموقع.</p></div>
@@ -349,6 +354,11 @@ input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-sel
 <div class="feature"><strong data-i18n="service11Title">اختبارات الحساسية</strong><p data-i18n="service11Desc">اختبارات الحساسية للمساعدة في تقييم استجابة المسببات للمضادات المختبرة.</p></div>
 </div>
 <p class="service-note" data-i18n="serviceNote">تُحدد الفحوصات المناسبة بعد مراجعة الحالة ونوع العينة، وتُؤكد إتاحة كل اختبار ومدته بالتواصل مع المعمل.</p>
+</section>
+<section class="section-card wide cases-preview" id="cases">
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM7 9h4m-4 4h10m-10 3h7"/></svg></span><span data-i18n="casesTitle">الحالات التشخيصية</span></h2>
+<p class="helper" data-i18n="casesIntro">نماذج من الحالات التي ساهم الفحص المعملي والاختبارات التشخيصية في الوصول إلى فهم أوضح لها.</p>
+<div class="cases-preview-row"><div><strong data-i18n="casesComingTitle">توثيق الحالات قيد الإعداد</strong><span data-i18n="casesComingDesc">نعرض الحالات المكتملة تشخيصيًا بعد مراجعة نتائجها والتأكد من إمكانية نشر تفاصيلها.</span></div><a class="btn btn-primary" href="case-studies.html" data-i18n="casesBrowse">استعراض الحالات التشخيصية</a></div>
 </section>
 <section class="section-card wide" id="why-us">
 <h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span><span data-i18n="whyTitle">لماذا معمل الفتح؟</span></h2>
@@ -452,7 +462,7 @@ const translations={
  heroTitle:"Al Fath Poultry Disease Diagnostic Laboratory",
  heroSub:"Scientific accuracy is the foundation of sound decisions. We combine laboratory examination and diagnostic testing to build a clearer understanding of each case and support informed decision-making.",
  heroTag:"Scientific expertise for the poultry industry",
- navLabel:"Main navigation",navServices:"Our Services",navWhy:"Why Al Fath?",navRequest:"Request a Test",navFaq:"FAQs",navContact:"Contact & Locations",
+ navLabel:"Main navigation",navServices:"Our Services",navCases:"Case Studies",navWhy:"Why Al Fath?",casesTitle:"Diagnostic Case Studies",casesIntro:"Selected cases where laboratory examination and diagnostic testing helped build a clearer understanding.",casesComingTitle:"Case documentation is in progress",casesComingDesc:"Only diagnostically completed cases will be published after reviewing the findings and confirming publication suitability.",casesBrowse:"Explore Case Studies",navRequest:"Request a Test",navFaq:"FAQs",navContact:"Contact & Locations",
  introTitle:"Laboratory Services & Contact",introSub:"Select a location to view its contact details and directions.",branchLabel:"Select a location",
  servicesTitle:"Diagnostic Services",
  service1Title:"Post-mortem Examination",service1Desc:"Assessment of gross and anatomical findings in correlation with the flock history and clinical signs.",
@@ -498,7 +508,7 @@ const translations={
  ar:{
  skip:"تجاوز إلى المحتوى",logoAlt:"الشعار الأصلي لمعمل الفتح لتشخيص أمراض الدواجن",receiptMessage:"تم التحويل، وأرسل إيصال الدفع للتأكيد.",eyebrow:"تشخيص معملي موثوق • خدمة ومتابعة",heroTitle:"معمل الفتح لتشخيص أمراض الدواجن",
  heroSub:"العلم أساس التشخيص السليم والقرار الصحيح. تواصل مع أقرب فرع، واعرف موقعه، واطّلع على وسائل الدفع المعتمدة.",
- heroTag:"خبرة علمية لخدمة قطاع الدواجن",navLabel:"التنقل داخل الموقع",navServices:"الخدمات",navWhy:"لماذا المعمل؟",navRequest:"طلب فحص",navFaq:"الأسئلة الشائعة",navContact:"التواصل والفروع",
+ heroTag:"خبرة علمية لخدمة قطاع الدواجن",navLabel:"التنقل داخل الموقع",navServices:"الخدمات",navCases:"الحالات التشخيصية",navWhy:"لماذا المعمل؟",casesTitle:"الحالات التشخيصية",casesIntro:"نماذج من الحالات التي ساهم الفحص المعملي والاختبارات التشخيصية في الوصول إلى فهم أوضح لها.",casesComingTitle:"توثيق الحالات قيد الإعداد",casesComingDesc:"نعرض الحالات المكتملة تشخيصيًا بعد مراجعة نتائجها والتأكد من إمكانية نشر تفاصيلها.",casesBrowse:"استعراض الحالات التشخيصية",navRequest:"طلب فحص",navFaq:"الأسئلة الشائعة",navContact:"التواصل والفروع",
  introTitle:"خدمات المعمل ووسائل التواصل",introSub:"اختر الفرع أولًا لتظهر لك بيانات التواصل والموقع.",branchLabel:"الفرع الذي تتواصل معه",
  servicesTitle:"خدماتنا التشخيصية",service1Title:"الفحص والتشريح المرضي",service1Desc:"تقييم التغيرات الظاهرية والتشريحية وربطها بتاريخ الحالة وأعراضها.",
  service2Title:"العزل البكتيري",service2Desc:"فحوصات معملية للمساعدة في تحديد المسببات البكتيرية المرتبطة بالحالة.",
