@@ -101,7 +101,6 @@ select{width:100%;border:0;outline:0;background:transparent;color:var(--forest);
 /* Final visual and accessibility refinement */
 :root{--radius-card:20px;--focus:0 0 0 3px #c5a35b55}
 body{font-size:15px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-::selection{background:#d9c28c;color:#17332e}
 a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:0;box-shadow:var(--focus)}
 .skip-link{position:fixed;z-index:1000;top:10px;right:10px;padding:10px 16px;border-radius:10px;background:#fff;color:var(--forest);transform:translateY(-160%);box-shadow:var(--shadow)}
 .skip-link:focus{transform:translateY(0)}
@@ -294,6 +293,14 @@ html[lang="en"] .hero .hero-sub{line-height:1.8}
  .hero h1{margin-bottom:19px;font-size:clamp(28px,7vw,35px);line-height:1.4}
  .hero .hero-sub{max-width:520px;margin:0 auto;padding-top:15px;font-size:14px;line-height:1.95}
 }
+
+
+/* Prevent accidental mobile tap highlighting on interface controls */
+html,body{-webkit-tap-highlight-color:transparent}
+a,button,select,summary,.section-icon,.language-switch{
+ -webkit-tap-highlight-color:transparent;
+}
+button,a,select,summary{-webkit-user-select:none;user-select:none}
 
 </style>
 </head>
