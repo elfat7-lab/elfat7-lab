@@ -246,7 +246,7 @@ html[lang="en"] .payment-actions{direction:ltr}
 <span class="hero-tag" data-i18n="heroTag">خبرة علمية لخدمة قطاع الدواجن</span>
 </div>
 <div class="logo-frame">
-<img class="logo" src="logo-elfat7-transparent.png" alt="الشعار الأصلي لمعمل الفتح لتشخيص أمراض الدواجن">
+<img class="logo" src="logo-elfat7-transparent.png" alt="الشعار الأصلي لمعمل الفتح لتشخيص أمراض الدواجن" data-i18n-alt="logoAlt">
 </div>
 </header>
 <main class="main-content" id="main-content"><nav class="quick-nav" aria-label="التنقل داخل الموقع" data-i18n-aria="navLabel">
@@ -354,7 +354,7 @@ html[lang="en"] .payment-actions{direction:ltr}
 </div>
 </div>
 <p class="helper" data-i18n="paymentNote">بعد التحويل، يُرجى إرسال صورة الإيصال عبر واتساب المعمل لتأكيد استلام المبلغ.</p>
-<a class="btn btn-primary btn-full" style="margin-top:12px" href="https://wa.me/201550221951?text=%D8%AA%D9%85%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%8C%20%D9%88%D8%A3%D8%B1%D8%B3%D9%84%20%D8%A5%D9%8A%D8%B5%D8%A7%D9%84%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D9%84%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF." target="_blank" rel="noopener" data-i18n="sendReceipt">إرسال إيصال التحويل عبر واتساب</a>
+<a class="btn btn-primary btn-full" style="margin-top:12px" id="receiptLink" href="https://wa.me/201550221951?text=%D8%AA%D9%85%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%8C%20%D9%88%D8%A3%D8%B1%D8%B3%D9%84%20%D8%A5%D9%8A%D8%B5%D8%A7%D9%84%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D9%84%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF." target="_blank" rel="noopener" data-i18n="sendReceipt">إرسال إيصال التحويل عبر واتساب</a>
 </div>
 </section>
 <section class="section-card wide">
@@ -374,7 +374,7 @@ html[lang="en"] .payment-actions{direction:ltr}
 
 const translations={
  en:{
- skip:"Skip to content",eyebrow:"Poultry Diagnostics • Laboratory Services",
+ skip:"Skip to content",logoAlt:"Official Al Fath Poultry Disease Diagnostic Laboratory logo",receiptMessage:"The payment has been made. I am sending the payment receipt for confirmation.",eyebrow:"Poultry Diagnostics • Laboratory Services",
  heroTitle:"Al Fath Poultry Disease Diagnostic Laboratory",
  heroSub:"Sound science leads to accurate diagnosis and informed decisions. Contact your nearest location, get directions and review the available payment methods.",
  heroTag:"Scientific expertise for the poultry industry",
@@ -417,7 +417,7 @@ const translations={
  formTitle:"Test Request / Enquiry – Al Fath Laboratory",formName:"Name",formPhone:"Phone",formBirds:"Bird type",formAge:"Flock age",formGovernorate:"Governorate",formLocation:"Laboratory location / collection point",formDetails:"Case details",notSpecified:"Not specified",notProvided:"Not provided"
  },
  ar:{
- skip:"تجاوز إلى المحتوى",eyebrow:"تشخيص معملي موثوق • خدمة ومتابعة",heroTitle:"معمل الفتح لتشخيص أمراض الدواجن",
+ skip:"تجاوز إلى المحتوى",logoAlt:"الشعار الأصلي لمعمل الفتح لتشخيص أمراض الدواجن",receiptMessage:"تم التحويل، وأرسل إيصال الدفع للتأكيد.",eyebrow:"تشخيص معملي موثوق • خدمة ومتابعة",heroTitle:"معمل الفتح لتشخيص أمراض الدواجن",
  heroSub:"العلم أساس التشخيص السليم والقرار الصحيح. تواصل مع أقرب فرع، واعرف موقعه، واطّلع على وسائل الدفع المعتمدة.",
  heroTag:"خبرة علمية لخدمة قطاع الدواجن",navLabel:"التنقل داخل الموقع",navServices:"الخدمات",navWhy:"لماذا المعمل؟",navRequest:"طلب فحص",navFaq:"الأسئلة الشائعة",navContact:"التواصل والفروع",
  introTitle:"خدمات المعمل ووسائل التواصل",introSub:"اختر الفرع أولًا لتظهر لك بيانات التواصل والموقع.",branchLabel:"الفرع الذي تتواصل معه",
@@ -510,6 +510,8 @@ function setLanguage(lang){
  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(t[k]!==undefined)el.textContent=t[k];});
  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.getAttribute('data-i18n-placeholder');if(t[k]!==undefined)el.placeholder=t[k];});
  document.querySelectorAll('[data-i18n-aria]').forEach(el=>{const k=el.getAttribute('data-i18n-aria');if(t[k]!==undefined)el.setAttribute('aria-label',t[k]);});
+ document.querySelectorAll('[data-i18n-alt]').forEach(el=>{const k=el.getAttribute('data-i18n-alt');if(t[k]!==undefined)el.setAttribute('alt',t[k]);});
+ document.getElementById('receiptLink').href='https://wa.me/201550221951?text='+encodeURIComponent(t.receiptMessage);
  const opts=branch.options;
  opts[0].textContent=lang==='en'?'Al Manzala – Dakahlia':'المنزلة – الدقهلية';
  opts[1].textContent=lang==='en'?'Saud – Al Husseiniya – Sharqia':'سعود – الحسينية – الشرقية';
