@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="الحالات التشخيصية المنشورة من معمل الفتح لتشخيص أمراض الدواجن.">
+<title>الحالات التشخيصية | معمل الفتح</title>
+<style>
+:root{--red:#8f2634;--red-dark:#681923;--red-soft:#f7eff0;--ink:#332d2e;--muted:#756b6d;--line:#e9dfe1;--paper:#fff;--canvas:#faf8f8;--shadow:0 18px 55px rgba(85,24,34,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font-family:Cairo,Tahoma,Arial,sans-serif;line-height:1.8}
+a{color:inherit}.wrap{max-width:1080px;margin:auto;padding:24px}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;color:var(--red)}.brand img{width:58px;height:58px;object-fit:contain}.lang{border:1px solid var(--line);border-radius:999px;background:#fff;padding:8px 14px;color:var(--red);font-weight:700;cursor:pointer}
+.hero{background:linear-gradient(125deg,var(--red-dark),var(--red));color:#fff;border-radius:24px;padding:38px 42px;box-shadow:var(--shadow)}.eyebrow{font-size:12px;color:#ead0d3;font-weight:700}.hero h1{font-size:clamp(27px,4vw,40px);line-height:1.35;margin:8px 0 10px}.hero p{margin:0;color:#f3e8e9;max-width:720px;font-size:15px}
+.content{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px;margin-top:20px;box-shadow:0 5px 20px rgba(85,24,34,.025)}.heading{margin:0 0 5px;color:var(--red);font-size:21px}.sub{margin:0;color:var(--muted);font-size:14px}
+.empty{margin-top:22px;padding:35px 22px;border:1px dashed #d9c4c8;border-radius:17px;background:linear-gradient(120deg,#fff,var(--red-soft));text-align:center}.empty-icon{width:58px;height:58px;margin:0 auto 12px;display:grid;place-items:center;border-radius:18px;background:#fff;color:var(--red);font-size:26px;border:1px solid var(--line)}.empty h2{font-size:18px;color:var(--red);margin:0 0 7px}.empty p{max-width:650px;margin:0 auto;color:var(--muted);font-size:14px}
+.btn{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border-radius:11px;padding:11px 18px;background:var(--red);color:#fff;font-weight:800;margin-top:20px}.btn:hover{background:var(--red-dark)}
+.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}.detail{padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff}.detail h3{font-size:15px;color:var(--red);margin:0 0 7px}.detail p{margin:0;color:var(--muted);font-size:14px;white-space:pre-line}.case-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.tag{padding:5px 11px;border-radius:999px;background:var(--red-soft);color:var(--red);font-size:12px;font-weight:700}
+.footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 0 8px}
+html[dir=ltr] body{font-family:Arial,sans-serif}html[dir=ltr] .hero,html[dir=ltr] .content{text-align:left}
+@media(max-width:650px){.wrap{padding:13px}.hero{padding:27px 22px;border-radius:19px}.content{padding:20px 16px;border-radius:18px}.detail-grid{grid-template-columns:1fr}.brand img{width:48px;height:48px}}
+</style>
+</head>
+<body><div class="wrap">
+<header class="top"><a class="brand" href="index.html"><img src="logo-elfat7-transparent.png" alt=""><span data-ar="معمل الفتح لتشخيص أمراض الدواجن" data-en="Al Fath Poultry Diagnostic Lab">معمل الفتح لتشخيص أمراض الدواجن</span></a><button class="lang" id="lang" type="button">English</button></header>
+<section class="hero"><div class="eyebrow" data-ar="من الفحص إلى التشخيص" data-en="FROM EXAMINATION TO DIAGNOSIS">من الفحص إلى التشخيص</div><h1 data-ar="الحالات التشخيصية" data-en="Diagnostic Case Studies">الحالات التشخيصية</h1><p data-ar="نماذج موثقة من الحالات التي تم تقييمها باستخدام الفحص والتشريح والاختبارات المعملية، مع توضيح كيف ساهمت النتائج في الوصول إلى التشخيص." data-en="Selected documented cases assessed through examination, post-mortem findings and laboratory testing, showing how the results contributed to the diagnostic conclusion.">نماذج موثقة من الحالات التي تم تقييمها باستخدام الفحص والتشريح والاختبارات المعملية، مع توضيح كيف ساهمت النتائج في الوصول إلى التشخيص.</p></section>
+<main id="app" class="content"><h2 class="heading" data-ar="أرشيف الحالات" data-en="Case Archive">أرشيف الحالات</h2><p class="sub" data-ar="يتم نشر الحالات بعد اكتمال التقييم التشخيصي ومراجعة المعلومات المسموح بمشاركتها." data-en="Cases are published after diagnostic assessment is complete and shareable information has been reviewed.">يتم نشر الحالات بعد اكتمال التقييم التشخيصي ومراجعة المعلومات المسموح بمشاركتها.</p><div id="case-list"></div></main>
+<footer class="footer"><span>ELFAT7 LAB</span> · <span data-ar="العلم أساس التشخيص السليم" data-en="Science is the basis of sound diagnosis">العلم أساس التشخيص السليم</span></footer>
+</div>
+<script>
+/* Add only verified, approved cases to this array. Each case opens as ?id=case-id */
+const cases = [];
+const copy = {
+ ar:{emptyTitle:"نعمل على تجهيز أرشيف الحالات",emptyText:"سيتم نشر الحالات التشخيصية المكتملة تباعًا، مع عرض الفحوصات والنتائج والتفسير العلمي دون الكشف عن بيانات المزارع أو أصحابها.",back:"العودة إلى الموقع",notFound:"الحالة المطلوبة غير متاحة أو لم يتم نشرها.",history:"ملخص الحالة",exam:"الفحص والملاحظات",tests:"الفحوصات المعملية",diagnosis:"التشخيص النهائي",how:"كيف وصلنا إلى التشخيص؟",note:"ملاحظة علمية",home:"الرئيسية"},
+ en:{emptyTitle:"Our case archive is being prepared",emptyText:"Completed diagnostic cases will be published progressively, including tests, findings and scientific interpretation, without disclosing farm or owner identities.",back:"Back to website",notFound:"This case is unavailable or has not been published.",history:"Case summary",exam:"Examination & findings",tests:"Laboratory tests",diagnosis:"Final diagnosis",how:"How was the diagnosis reached?",note:"Scientific note",home:"Home"}
+};
+let lang="ar";
+function setLang(next){lang=next;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.querySelectorAll("[data-ar]").forEach(el=>el.textContent=el.dataset[lang]);document.getElementById("lang").textContent=lang==="ar"?"English":"العربية";render();}
+document.getElementById("lang").addEventListener("click",()=>setLang(lang==="ar"?"en":"ar"));
+function render(){const t=copy[lang],id=new URLSearchParams(location.search).get("id"),app=document.getElementById("case-list");if(!id){app.innerHTML='<div class="empty"><div class="empty-icon">✚</div><h2>'+t.emptyTitle+'</h2><p>'+t.emptyText+'</p><a class="btn" href="index.html">'+t.back+'</a></div>';return;}const item=cases.find(x=>x.id===id);if(!item){app.innerHTML='<div class="empty"><h2>'+t.notFound+'</h2><a class="btn" href="case-studies.html">'+t.back+'</a></div>';return;}const val=k=>item[k]?.[lang]||item[k]?.ar||"—";app.innerHTML='<div class="case-meta"><span class="tag">'+(item.number||"")+'</span><span class="tag">'+val("category")+'</span></div><h2 class="heading">'+val("title")+'</h2><div class="case-meta"><span class="tag">'+val("birdType")+'</span><span class="tag">'+val("age")+'</span></div><div class="detail-grid">'+[['history','summary'],['exam','findings'],['tests','tests'],['diagnosis','diagnosis'],['how','explanation'],['note','note']].map(([label,key])=>'<section class="detail"><h3>'+t[label]+'</h3><p>'+val(key)+'</p></section>').join("")+'</div><a class="btn" href="case-studies.html">'+t.back+'</a>';}
+setLang("ar");
+</script>
+</body></html>
