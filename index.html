@@ -3,7 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#842332">
+<meta name="theme-color" content="#8f2634">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="معمل الفتح">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="app-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="logo-elfat7-transparent.png">
 <meta name="description" content="معمل الفتح لتشخيص أمراض الدواجن — خدمات التشخيص المعملي، الفحوصات، التواصل وطلب الفحص.">
 <title>معمل الفتح | تشخيص أمراض الدواجن</title>
 <style>
@@ -305,6 +311,11 @@ input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-sel
 .cases-preview-row{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:18px;padding:18px 20px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(110deg,#fff 0%,var(--forest-soft) 100%)}
 .cases-preview-row strong,.cases-preview-row span{display:block}.cases-preview-row strong{color:var(--forest);font-size:15px;margin-bottom:4px}.cases-preview-row span{color:var(--muted);font-size:13px;line-height:1.8}.cases-preview-row .btn{flex:0 0 auto}
 @media(max-width:600px){.cases-preview-row{align-items:stretch;flex-direction:column}.cases-preview-row .btn{width:100%}}
+
+/* Installable app action */
+.install-app-btn{position:fixed;z-index:50;bottom:18px;left:18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 17px;border:1px solid #681923;border-radius:999px;background:#8f2634;color:#fff;font:700 13px Tahoma,Arial,sans-serif;box-shadow:0 8px 24px rgba(85,24,34,.22);cursor:pointer}
+.install-app-btn[hidden]{display:none}
+@media(max-width:600px){.install-app-btn{bottom:12px;left:12px;min-height:43px;padding:9px 14px}}
 </style>
 </head>
 <body>
@@ -458,7 +469,7 @@ input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-sel
 
 const translations={
  en:{
- skip:"Skip to content",logoAlt:"Official Al Fath Poultry Disease Diagnostic Laboratory logo",receiptMessage:"The payment has been made. I am sending the payment receipt for confirmation.",eyebrow:"Scientific Poultry Diagnostics • Specialized Expertise",
+ skip:"Skip to content",installApp:"Install app",installHelp:"To install: open your browser menu and choose Add to Home screen or Install app.",logoAlt:"Official Al Fath Poultry Disease Diagnostic Laboratory logo",receiptMessage:"The payment has been made. I am sending the payment receipt for confirmation.",eyebrow:"Scientific Poultry Diagnostics • Specialized Expertise",
  heroTitle:"Al Fath Poultry Disease Diagnostic Laboratory",
  heroSub:"Scientific accuracy is the foundation of sound decisions. We combine laboratory examination and diagnostic testing to build a clearer understanding of each case and support informed decision-making.",
  heroTag:"Scientific expertise for the poultry industry",
@@ -506,7 +517,7 @@ const translations={
  formTitle:"Test Request / Enquiry – Al Fath Laboratory",formName:"Name",formPhone:"Phone",formBirds:"Bird type",formAge:"Flock age",formGovernorate:"Governorate",formLocation:"Laboratory location / collection point",formDetails:"Case details",notSpecified:"Not specified",notProvided:"Not provided"
  },
  ar:{
- skip:"تجاوز إلى المحتوى",logoAlt:"الشعار الأصلي لمعمل الفتح لتشخيص أمراض الدواجن",receiptMessage:"تم التحويل، وأرسل إيصال الدفع للتأكيد.",eyebrow:"تشخيص معملي موثوق • خدمة ومتابعة",heroTitle:"معمل الفتح لتشخيص أمراض الدواجن",
+ skip:"تجاوز إلى المحتوى",installApp:"تثبيت التطبيق",installHelp:"لتثبيت التطبيق: افتح قائمة المتصفح واختر «إضافة إلى الشاشة الرئيسية» أو «تثبيت التطبيق».",logoAlt:"الشعار الأصلي لمعمل الفتح لتشخيص أمراض الدواجن",receiptMessage:"تم التحويل، وأرسل إيصال الدفع للتأكيد.",eyebrow:"تشخيص معملي موثوق • خدمة ومتابعة",heroTitle:"معمل الفتح لتشخيص أمراض الدواجن",
  heroSub:"العلم أساس التشخيص السليم والقرار الصحيح. تواصل مع أقرب فرع، واعرف موقعه، واطّلع على وسائل الدفع المعتمدة.",
  heroTag:"خبرة علمية لخدمة قطاع الدواجن",navLabel:"التنقل داخل الموقع",navServices:"الخدمات",navCases:"الحالات التشخيصية",navWhy:"لماذا المعمل؟",casesTitle:"الحالات التشخيصية",casesIntro:"نماذج من الحالات التي ساهم الفحص المعملي والاختبارات التشخيصية في الوصول إلى فهم أوضح لها.",casesComingTitle:"توثيق الحالات قيد الإعداد",casesComingDesc:"نعرض الحالات المكتملة تشخيصيًا بعد مراجعة نتائجها والتأكد من إمكانية نشر تفاصيلها.",casesBrowse:"استعراض الحالات التشخيصية",navRequest:"طلب فحص",navFaq:"الأسئلة الشائعة",navContact:"التواصل والفروع",
  introTitle:"خدمات المعمل ووسائل التواصل",introSub:"اختر الفرع أولًا لتظهر لك بيانات التواصل والموقع.",branchLabel:"الفرع الذي تتواصل معه",
@@ -624,6 +635,29 @@ document.getElementById('langEn').addEventListener('click',()=>setLanguage('en')
 
 branch.addEventListener('change',applyBranch);
 setLanguage(localStorage.getItem('elfat7-language')||'ar');
+
+let deferredInstallPrompt=null;
+const installButton=document.getElementById('installAppBtn');
+window.addEventListener('beforeinstallprompt',event=>{
+ event.preventDefault();
+ deferredInstallPrompt=event;
+ installButton.hidden=false;
+});
+installButton.addEventListener('click',async()=>{
+ if(deferredInstallPrompt){
+  deferredInstallPrompt.prompt();
+  await deferredInstallPrompt.userChoice;
+  deferredInstallPrompt=null;
+  installButton.hidden=true;
+ }else{
+  alert(translations[document.documentElement.lang].installHelp);
+ }
+});
+window.addEventListener('appinstalled',()=>{installButton.hidden=true;});
+if('serviceWorker' in navigator){
+ window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+}
+
 </script>
 </body>
 </html>
