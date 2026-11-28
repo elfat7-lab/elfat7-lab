@@ -1,0 +1,29 @@
+{
+  "name": "معمل الفتح لتشخيص أمراض الدواجن",
+  "short_name": "معمل الفتح",
+  "description": "خدمات التشخيص المعملي، الحالات التشخيصية، الفروع وطلب الفحص.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait",
+  "background_color": "#faf8f8",
+  "theme_color": "#8f2634",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": [
+    "business",
+    "medical"
+  ]
+}
