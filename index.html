@@ -253,6 +253,22 @@ html[lang="en"] .language-switch{right:auto;left:22px}
  html[lang="en"] .language-switch{right:auto;left:13px}
 }
 
+
+/* Refined hero typography hierarchy */
+.hero .eyebrow{font-size:14px;letter-spacing:.15px;font-weight:700;margin-bottom:18px}
+.hero h1{font-size:clamp(29px,4.2vw,42px);line-height:1.35;letter-spacing:-.35px;max-width:760px;margin-left:auto;margin-right:auto}
+.hero .hero-sub{font-size:16px;line-height:1.95;font-weight:500;max-width:650px;margin:15px auto 0;color:rgba(255,255,255,.88);text-wrap:pretty}
+.hero .hero-tag{margin-top:24px}
+html[lang="en"] .hero .eyebrow{letter-spacing:.35px}
+html[lang="en"] .hero h1{letter-spacing:-.5px;line-height:1.22}
+html[lang="en"] .hero .hero-sub{line-height:1.8}
+@media(max-width:760px){
+ .hero .eyebrow{font-size:12px;margin-bottom:13px}
+ .hero h1{font-size:clamp(27px,7vw,34px);line-height:1.35}
+ .hero .hero-sub{font-size:14px;line-height:1.9;margin-top:12px}
+ .hero .hero-tag{margin-top:19px}
+}
+
 </style>
 </head>
 <body>
@@ -262,9 +278,9 @@ html[lang="en"] .language-switch{right:auto;left:22px}
 <header class="hero">
 <div class="language-switch" aria-label="Language selection"><button type="button" id="langAr" class="lang-option active" aria-pressed="true">العربية</button><span aria-hidden="true">|</span><button type="button" id="langEn" class="lang-option" aria-pressed="false">English</button></div>
 <div class="brand-copy">
-<div class="eyebrow" data-i18n="eyebrow">تشخيص معملي موثوق • خدمة ومتابعة</div>
+<div class="eyebrow" data-i18n="eyebrow">تشخيص علمي موثوق • خبرة متخصصة في صحة الدواجن</div>
 <h1 data-i18n="heroTitle">معمل الفتح لتشخيص أمراض الدواجن</h1>
-<p class="hero-sub" data-i18n="heroSub">العلم أساس التشخيص السليم والقرار الصحيح. تواصل مع أقرب فرع، واعرف موقعه، واطّلع على وسائل الدفع المعتمدة.</p>
+<p class="hero-sub" data-i18n="heroSub">العلم أساس التشخيص الدقيق والقرار الصحيح. نوظّف الفحص المعملي والاختبارات التشخيصية للوصول إلى صورة أوضح عن الحالة، ودعم اتخاذ القرار السليم.</p>
 <span class="hero-tag" data-i18n="heroTag">خبرة علمية لخدمة قطاع الدواجن</span>
 </div>
 <div class="logo-frame">
@@ -396,9 +412,9 @@ html[lang="en"] .language-switch{right:auto;left:22px}
 
 const translations={
  en:{
- skip:"Skip to content",logoAlt:"Official Al Fath Poultry Disease Diagnostic Laboratory logo",receiptMessage:"The payment has been made. I am sending the payment receipt for confirmation.",eyebrow:"Poultry Diagnostics • Laboratory Services",
+ skip:"Skip to content",logoAlt:"Official Al Fath Poultry Disease Diagnostic Laboratory logo",receiptMessage:"The payment has been made. I am sending the payment receipt for confirmation.",eyebrow:"Scientific Poultry Diagnostics • Specialized Expertise",
  heroTitle:"Al Fath Poultry Disease Diagnostic Laboratory",
- heroSub:"Sound science leads to accurate diagnosis and informed decisions. Contact your nearest location, get directions and review the available payment methods.",
+ heroSub:"Scientific accuracy is the foundation of sound decisions. We combine laboratory examination and diagnostic testing to build a clearer understanding of each case and support informed decision-making.",
  heroTag:"Scientific expertise for the poultry industry",
  navLabel:"Main navigation",navServices:"Our Services",navWhy:"Why Al Fath?",navRequest:"Request a Test",navFaq:"FAQs",navContact:"Contact & Locations",
  introTitle:"Laboratory Services & Contact",introSub:"Select a location to view its contact details and directions.",branchLabel:"Select a location",
