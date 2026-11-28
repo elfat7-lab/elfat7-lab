@@ -465,7 +465,7 @@ input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;user-sel
 </div>
 <footer class="footer"><span class="footer-mark">ELFAT7 LAB</span><span data-i18n="footerName">معمل الفتح لتشخيص أمراض الدواجن</span><span data-i18n="footerTag">العلم أساس التشخيص السليم</span></footer>
 </div>
-<button id="installAppBtn" class="install-app-btn" type="button" data-i18n="installApp">تثبيت التطبيق</button>
+<button id="installAppBtn" class="install-app-btn" type="button" hidden data-i18n="installApp">تثبيت التطبيق</button>
 <script>
 
 const translations={
@@ -639,8 +639,13 @@ setLanguage(localStorage.getItem('elfat7-language')||'ar');
 
 let deferredInstallPrompt=null;
 const installButton=document.getElementById('installAppBtn');
+const isInstalledApp=()=>window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+// The install control belongs on the website only, never inside the installed app.
+installButton.hidden=isInstalledApp();
+if(!isInstalledApp()) installButton.hidden=false;
 window.addEventListener('beforeinstallprompt',event=>{
  event.preventDefault();
+ if(isInstalledApp()) return;
  deferredInstallPrompt=event;
  installButton.hidden=false;
 });
