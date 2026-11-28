@@ -266,7 +266,33 @@ html[lang="en"] .hero .hero-sub{line-height:1.8}
  .hero .eyebrow{font-size:12px;margin-bottom:13px}
  .hero h1{font-size:clamp(27px,7vw,34px);line-height:1.35}
  .hero .hero-sub{font-size:14px;line-height:1.9;margin-top:12px}
- .hero .hero-tag{margin-top:19px}
+}
+
+
+/* Clear visual separation between hero text levels */
+.hero .brand-copy{max-width:670px}
+.hero .eyebrow{
+ display:inline-flex;align-items:center;gap:10px;
+ padding:7px 13px;margin:0 0 23px;
+ border:1px solid rgba(232,214,169,.28);border-radius:999px;
+ background:rgba(255,255,255,.045);font-size:12px;line-height:1.5;
+}
+.hero .eyebrow:before{width:20px;flex:0 0 20px}
+.hero h1{margin:0 0 21px;max-width:660px;font-size:clamp(30px,3.5vw,44px);line-height:1.38}
+.hero .hero-sub{
+ position:relative;max-width:590px;margin:0;padding-top:17px;
+ border-top:1px solid rgba(232,214,169,.34);
+ color:rgba(255,255,255,.86);font-size:15px;line-height:2;
+}
+html[lang="en"] .hero .eyebrow{letter-spacing:.25px}
+html[lang="en"] .hero h1{line-height:1.2;margin-bottom:20px}
+html[lang="en"] .hero .hero-sub{line-height:1.8}
+@media(max-width:760px){
+ .hero .brand-copy{max-width:100%}
+ .hero .eyebrow{margin-bottom:19px;padding:6px 11px;font-size:11px}
+ .hero .eyebrow:before{width:15px;flex-basis:15px}
+ .hero h1{margin-bottom:19px;font-size:clamp(28px,7vw,35px);line-height:1.4}
+ .hero .hero-sub{max-width:520px;margin:0 auto;padding-top:15px;font-size:14px;line-height:1.95}
 }
 
 </style>
@@ -281,7 +307,7 @@ html[lang="en"] .hero .hero-sub{line-height:1.8}
 <div class="eyebrow" data-i18n="eyebrow">تشخيص علمي موثوق • خبرة متخصصة في صحة الدواجن</div>
 <h1 data-i18n="heroTitle">معمل الفتح لتشخيص أمراض الدواجن</h1>
 <p class="hero-sub" data-i18n="heroSub">العلم أساس التشخيص الدقيق والقرار الصحيح. نوظّف الفحص المعملي والاختبارات التشخيصية للوصول إلى صورة أوضح عن الحالة، ودعم اتخاذ القرار السليم.</p>
-<span class="hero-tag" data-i18n="heroTag">خبرة علمية لخدمة قطاع الدواجن</span>
+
 </div>
 <div class="logo-frame">
 <img class="logo" src="logo-elfat7-transparent.png" alt="الشعار الأصلي لمعمل الفتح لتشخيص أمراض الدواجن" data-i18n-alt="logoAlt">
