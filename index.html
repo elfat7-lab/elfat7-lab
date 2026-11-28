@@ -200,31 +200,63 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
  .hero{padding-top:25px;padding-bottom:24px}
  .logo-frame{width:164px;height:164px}
 }
+
+.language-switch{display:flex;align-items:center;gap:9px;margin:0 0 17px;color:#d9e5df;font-size:13px;font-weight:700}
+.lang-option{border:0;background:transparent;color:#d9e5df;padding:5px 2px;font:inherit;cursor:pointer;opacity:.72}
+.lang-option.active{opacity:1;color:#f0dfb7;text-decoration:underline;text-underline-offset:5px}
+html[lang="en"] body{font-family:Inter,Arial,sans-serif;line-height:1.65}
+html[lang="en"] .hero{direction:ltr}
+html[lang="en"] .brand-copy{text-align:left}
+html[lang="en"] .eyebrow:before{order:0}
+html[lang="en"] .main-content{text-align:left}
+html[lang="en"] .intro-row{align-items:center}
+html[lang="en"] .section-heading{direction:ltr}
+html[lang="en"] .feature strong,html[lang="en"] .feature p,html[lang="en"] .faq-list,html[lang="en"] .request-form,html[lang="en"] .address{text-align:left}
+html[lang="en"] .payment-value{text-align:left}
+html[lang="en"] .payment-item{direction:ltr}
+html[lang="en"] .branch-panel:after{left:auto;right:19px}
+html[lang="en"] .branch-panel select{padding-left:12px;padding-right:34px}
+html[lang="en"] .skip-link{right:auto;left:10px}
+html[lang="en"] .quick-nav{direction:ltr}
+html[lang="en"] .quick-nav a{direction:ltr}
+html[lang="en"] .hero-sub{max-width:620px}
+html[lang="en"] .footer{direction:ltr}
+html[lang="en"] .payment-actions{direction:ltr}
+@media(max-width:760px){
+ .language-switch{justify-content:center;margin-bottom:10px}
+ html[lang="en"] .hero{direction:ltr}
+ html[lang="en"] .brand-copy{text-align:center}
+ html[lang="en"] .intro-row{text-align:left}
+ html[lang="en"] .quick-nav{direction:ltr}
+ html[lang="en"] .quick-nav a{font-size:12px}
+ html[lang="en"] .section-heading{justify-content:flex-start}
+}
+
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">تجاوز إلى المحتوى</a>
+<a class="skip-link" href="#main-content" data-i18n="skip">تجاوز إلى المحتوى</a>
 <div class="page-shell">
 <div class="site-card">
 <header class="hero">
-<div class="brand-copy">
-<div class="eyebrow">تشخيص معملي موثوق • خدمة ومتابعة</div>
-<h1>معمل الفتح لتشخيص أمراض الدواجن</h1>
-<p class="hero-sub">العلم أساس التشخيص السليم والقرار الصحيح. تواصل مع أقرب فرع، واعرف موقعه، واطّلع على وسائل الدفع المعتمدة.</p>
-<span class="hero-tag">خبرة علمية لخدمة قطاع الدواجن</span>
+<div class="brand-copy">\n<div class="language-switch" aria-label="Language selection"><button type="button" id="langAr" class="lang-option active" aria-pressed="true">العربية</button><span aria-hidden="true">|</span><button type="button" id="langEn" class="lang-option" aria-pressed="false">English</button></div>
+<div class="eyebrow" data-i18n="eyebrow">تشخيص معملي موثوق • خدمة ومتابعة</div>
+<h1 data-i18n="heroTitle">معمل الفتح لتشخيص أمراض الدواجن</h1>
+<p class="hero-sub" data-i18n="heroSub">العلم أساس التشخيص السليم والقرار الصحيح. تواصل مع أقرب فرع، واعرف موقعه، واطّلع على وسائل الدفع المعتمدة.</p>
+<span class="hero-tag" data-i18n="heroTag">خبرة علمية لخدمة قطاع الدواجن</span>
 </div>
 <div class="logo-frame">
 <img class="logo" src="logo-elfat7-transparent.png" alt="الشعار الأصلي لمعمل الفتح لتشخيص أمراض الدواجن">
 </div>
 </header>
-<main class="main-content" id="main-content"><nav class="quick-nav" aria-label="التنقل داخل الموقع">
-<a href="#services">الخدمات</a><a href="#why-us">لماذا المعمل؟</a><a href="#request">طلب فحص</a><a href="#faq">الأسئلة الشائعة</a><a href="#contact">التواصل والفروع</a>
+<main class="main-content" id="main-content"><nav class="quick-nav" aria-label="التنقل داخل الموقع" data-i18n-aria="navLabel">
+<a href="#services" data-i18n="navServices">الخدمات</a><a href="#why-us" data-i18n="navWhy">لماذا المعمل؟</a><a href="#request" data-i18n="navRequest">طلب فحص</a><a href="#faq" data-i18n="navFaq">الأسئلة الشائعة</a><a href="#contact" data-i18n="navContact">التواصل والفروع</a>
 </nav>
 <div class="intro-row">
-<div><h2>خدمات المعمل ووسائل التواصل</h2><p>اختر الفرع أولًا لتظهر لك بيانات التواصل والموقع.</p></div>
+<div><h2 data-i18n="introTitle">خدمات المعمل ووسائل التواصل</h2><p data-i18n="introSub">اختر الفرع أولًا لتظهر لك بيانات التواصل والموقع.</p></div>
 <div class="branch-panel">
-<label class="field-label" for="branch">الفرع الذي تتواصل معه</label>
-<select id="branch" aria-label="اختر الفرع">
+<label class="field-label" for="branch" data-i18n="branchLabel">الفرع الذي تتواصل معه</label>
+<select id="branch" aria-label="اختر الفرع" data-i18n-aria="branchLabel">
 <option value="mansoura">المنزلة – الدقهلية</option>
 <option value="husseiniya">سعود – الحسينية – الشرقية</option>
 <option value="rawdah">نقطة استلام الروضة – دمياط</option>
@@ -233,68 +265,68 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </div>
 
 <section class="section-card wide" id="services">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>خدماتنا التشخيصية</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span><span data-i18n="servicesTitle">خدماتنا التشخيصية</span></h2>
 <div class="feature-grid">
-<div class="feature"><strong>الفحص والتشريح المرضي</strong><p>تقييم التغيرات الظاهرية والتشريحية وربطها بتاريخ الحالة وأعراضها.</p></div>
-<div class="feature"><strong>العزل البكتيري</strong><p>فحوصات معملية للمساعدة في تحديد المسببات البكتيرية المرتبطة بالحالة.</p></div>
-<div class="feature"><strong>الفحوصات الجزيئية PCR</strong><p>الكشف عن المسببات المستهدفة وفقًا لنوع العينة والاشتباه التشخيصي.</p></div>
-<div class="feature"><strong>تقييم السموم الفطرية</strong><p>دراسة احتمالية مساهمة السموم الفطرية ضمن الصورة التشخيصية للحالة.</p></div>
-<div class="feature"><strong>التقييم التشخيصي المتكامل</strong><p>ربط نتائج الفحص والتاريخ المرضي والاختبارات المعملية للوصول إلى صورة أوضح.</p></div>
-<div class="feature"><strong>دعم القرار التشخيصي</strong><p>توضيح دلالة النتائج في ضوء الحالة، دون الاعتماد على التخمين أو عرض الأعراض وحدها.</p></div>
+<div class="feature"><strong data-i18n="service1Title">الفحص والتشريح المرضي</strong><p data-i18n="service1Desc">تقييم التغيرات الظاهرية والتشريحية وربطها بتاريخ الحالة وأعراضها.</p></div>
+<div class="feature"><strong data-i18n="service2Title">العزل البكتيري</strong><p data-i18n="service2Desc">فحوصات معملية للمساعدة في تحديد المسببات البكتيرية المرتبطة بالحالة.</p></div>
+<div class="feature"><strong data-i18n="service3Title">الفحوصات الجزيئية PCR</strong><p data-i18n="service3Desc">الكشف عن المسببات المستهدفة وفقًا لنوع العينة والاشتباه التشخيصي.</p></div>
+<div class="feature"><strong data-i18n="service4Title">تقييم السموم الفطرية</strong><p data-i18n="service4Desc">دراسة احتمالية مساهمة السموم الفطرية ضمن الصورة التشخيصية للحالة.</p></div>
+<div class="feature"><strong data-i18n="service5Title">التقييم التشخيصي المتكامل</strong><p data-i18n="service5Desc">ربط نتائج الفحص والتاريخ المرضي والاختبارات المعملية للوصول إلى صورة أوضح.</p></div>
+<div class="feature"><strong data-i18n="service6Title">دعم القرار التشخيصي</strong><p data-i18n="service6Desc">توضيح دلالة النتائج في ضوء الحالة، دون الاعتماد على التخمين أو عرض الأعراض وحدها.</p></div>
 </div>
-<p class="service-note">تُحدد الفحوصات المناسبة بعد مراجعة الحالة ونوع العينة، وتُؤكد إتاحة كل اختبار ومدته بالتواصل مع المعمل.</p>
+<p class="service-note" data-i18n="serviceNote">تُحدد الفحوصات المناسبة بعد مراجعة الحالة ونوع العينة، وتُؤكد إتاحة كل اختبار ومدته بالتواصل مع المعمل.</p>
 </section>
 <section class="section-card wide" id="why-us">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span>لماذا معمل الفتح؟</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span><span data-i18n="whyTitle">لماذا معمل الفتح؟</span></h2>
 <div class="feature-grid">
-<div class="feature"><strong>التشخيص أساس القرار</strong><p>الاهتمام بالوصول إلى المسبب، وليس الاكتفاء بتشابه الأعراض.</p></div>
-<div class="feature"><strong>أكثر من أداة للفحص</strong><p>الاستفادة من الفحص والتشريح والاختبارات المعملية بحسب متطلبات كل حالة.</p></div>
-<div class="feature"><strong>خدمة قطاع الدواجن</strong><p>قنوات تواصل واضحة مع فروع المعمل ونقطة استلام العينات.</p></div>
+<div class="feature"><strong data-i18n="why1Title">التشخيص أساس القرار</strong><p data-i18n="why1Desc">الاهتمام بالوصول إلى المسبب، وليس الاكتفاء بتشابه الأعراض.</p></div>
+<div class="feature"><strong data-i18n="why2Title">أكثر من أداة للفحص</strong><p data-i18n="why2Desc">الاستفادة من الفحص والتشريح والاختبارات المعملية بحسب متطلبات كل حالة.</p></div>
+<div class="feature"><strong data-i18n="why3Title">خدمة قطاع الدواجن</strong><p data-i18n="why3Desc">قنوات تواصل واضحة مع فروع المعمل ونقطة استلام العينات.</p></div>
 </div>
 </section>
 <section class="section-card wide" id="request">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>طلب فحص أو استفسار</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span data-i18n="requestTitle">طلب فحص أو استفسار</span></h2>
 <form class="request-form" id="requestForm">
-<label>الاسم<input name="name" required autocomplete="name" placeholder="اسمك"></label>
-<label>رقم الهاتف<input name="phone" required type="tel" inputmode="tel" placeholder="رقم للتواصل"></label>
-<label>نوع الطيور<input name="birds" placeholder="مثل: تسمين / أمهات / بياض"></label>
-<label>العمر<input name="age" placeholder="عمر القطيع بالأيام"></label>
-<label>المحافظة<input name="governorate" placeholder="المحافظة"></label>
-<label>الفرع أو نقطة الاستلام<select name="branch"><option>المنزلة – الدقهلية</option><option>سعود – الحسينية – الشرقية</option><option>نقطة استلام الروضة – دمياط</option></select></label>
-<label class="full">وصف مختصر للحالة أو الفحص المطلوب<textarea name="details" placeholder="اكتب الأعراض أو نوع الفحص المطلوب"></textarea></label>
-<button class="btn btn-primary btn-full full" type="submit">إرسال الطلب عبر واتساب</button>
+<label><span data-i18n="nameLabel">الاسم</span><input name="name" required autocomplete="name" placeholder="اسمك" data-i18n-placeholder="namePlaceholder"></label>
+<label><span data-i18n="phoneLabel">رقم الهاتف</span><input name="phone" required type="tel" inputmode="tel" placeholder="رقم للتواصل" data-i18n-placeholder="phonePlaceholder"></label>
+<label><span data-i18n="birdsLabel">نوع الطيور</span><input name="birds" placeholder="مثل: تسمين / أمهات / بياض" data-i18n-placeholder="birdsPlaceholder"></label>
+<label><span data-i18n="ageLabel">العمر</span><input name="age" placeholder="عمر القطيع بالأيام" data-i18n-placeholder="agePlaceholder"></label>
+<label><span data-i18n="governorateLabel">المحافظة</span><input name="governorate" placeholder="المحافظة" data-i18n-placeholder="governoratePlaceholder"></label>
+<label><span data-i18n="formBranchLabel">الفرع أو نقطة الاستلام</span><select name="branch"><option value="mansoura">المنزلة – الدقهلية</option><option value="husseiniya">سعود – الحسينية – الشرقية</option><option value="rawdah">نقطة استلام الروضة – دمياط</option></select></label>
+<label class="full"><span data-i18n="detailsLabel">وصف مختصر للحالة أو الفحص المطلوب</span><textarea name="details" placeholder="اكتب الأعراض أو نوع الفحص المطلوب" data-i18n-placeholder="detailsPlaceholder"></textarea></label>
+<button class="btn btn-primary btn-full full" type="submit" data-i18n="submitRequest">إرسال الطلب عبر واتساب</button>
 </form>
-<p class="helper">سيتم فتح واتساب برسالة تحتوي على البيانات التي أدخلتها لمراجعتها وإرسالها بنفسك. لا تُرسل بيانات حساسة.</p>
+<p class="helper" data-i18n="requestNote">سيتم فتح واتساب برسالة تحتوي على البيانات التي أدخلتها لمراجعتها وإرسالها بنفسك. لا تُرسل بيانات حساسة.</p>
 </section>
 <section class="section-card wide" id="faq">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.8c-1.1 1-1.9 1.4-1.9 3M12 17.5h.01"/></svg></span>أسئلة شائعة</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.8c-1.1 1-1.9 1.4-1.9 3M12 17.5h.01"/></svg></span><span data-i18n="faqTitle">أسئلة شائعة</span></h2>
 <div class="faq-list">
-<details><summary>كيف أعرف الفحص المناسب للحالة؟</summary><p>أرسل وصفًا مختصرًا للحالة وبيانات القطيع للمعمل، وسيتم إرشادك إلى الفحص المناسب وفق المعلومات المتاحة.</p></details>
-<details><summary>ما نوع العينات المطلوبة؟</summary><p>تختلف العينة حسب الفحص والاشتباه التشخيصي؛ يُرجى التواصل مع المعمل قبل تجهيز العينة لتحديد النوع وطريقة الحفظ والنقل.</p></details>
-<details><summary>هل يمكن إرسال عينة من خلال نقطة الروضة؟</summary><p>الروضة مُدرجة كنقطة استلام، وليست فرعًا تشخيصيًا كاملًا. يُرجى التواصل مسبقًا لتأكيد ترتيبات الاستلام.</p></details>
-<details><summary>متى تظهر نتيجة الفحص؟</summary><p>تختلف المدة حسب نوع الاختبار والعينة والإجراءات المطلوبة. يُرجى تأكيد المدة المتوقعة عند طلب الفحص.</p></details>
-<details><summary>كيف أتابع بعد إرسال العينة؟</summary><p>احتفظ ببيانات التواصل مع المعمل، وتواصل عبر واتساب للاستفسار عن حالة الطلب والنتيجة.</p></details>
+<details><summary data-i18n="faq1Q">كيف أعرف الفحص المناسب للحالة؟</summary><p data-i18n="faq1A">أرسل وصفًا مختصرًا للحالة وبيانات القطيع للمعمل، وسيتم إرشادك إلى الفحص المناسب وفق المعلومات المتاحة.</p></details>
+<details><summary data-i18n="faq2Q">ما نوع العينات المطلوبة؟</summary><p data-i18n="faq2A">تختلف العينة حسب الفحص والاشتباه التشخيصي؛ يُرجى التواصل مع المعمل قبل تجهيز العينة لتحديد النوع وطريقة الحفظ والنقل.</p></details>
+<details><summary data-i18n="faq3Q">هل يمكن إرسال عينة من خلال نقطة الروضة؟</summary><p data-i18n="faq3A">الروضة مُدرجة كنقطة استلام، وليست فرعًا تشخيصيًا كاملًا. يُرجى التواصل مسبقًا لتأكيد ترتيبات الاستلام.</p></details>
+<details><summary data-i18n="faq4Q">متى تظهر نتيجة الفحص؟</summary><p data-i18n="faq4A">تختلف المدة حسب نوع الاختبار والعينة والإجراءات المطلوبة. يُرجى تأكيد المدة المتوقعة عند طلب الفحص.</p></details>
+<details><summary data-i18n="faq5Q">كيف أتابع بعد إرسال العينة؟</summary><p data-i18n="faq5A">احتفظ ببيانات التواصل مع المعمل، وتواصل عبر واتساب للاستفسار عن حالة الطلب والنتيجة.</p></details>
 </div>
 </section>
 <div class="sections-grid">
 <section class="section-card" id="contact">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-7-7l3-2-2-5Z"/></svg></span>تواصل مع المعمل</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-7-7l3-2-2-5Z"/></svg></span><span data-i18n="contactTitle">تواصل مع المعمل</span></h2>
 <div class="actions">
-<a class="btn btn-primary btn-full" id="wa" href="https://wa.me/201550221951" target="_blank" rel="noopener">واتساب المعمل</a>
+<a class="btn btn-primary btn-full" id="wa" href="https://wa.me/201550221951" target="_blank" rel="noopener" data-i18n="whatsappLab">واتساب المعمل</a>
 <a class="btn" id="call1" href="tel:+201091895649">0109 189 5649</a>
 <a class="btn" id="call2" href="tel:+201062658455">0106 265 8455</a>
 <a class="btn btn-full" id="call3" href="tel:+201550221951">0155 022 1951</a>
 </div>
 </section>
 <section class="section-card">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>موقع الفرع</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span data-i18n="branchLocation">موقع الفرع</span></h2>
 <div class="map-box">
-<a class="btn btn-primary btn-full" id="mapLink" href="#" target="_blank" rel="noopener noreferrer">افتح موقع الفرع على Google Maps</a>
+<a class="btn btn-primary btn-full" id="mapLink" href="#" target="_blank" rel="noopener noreferrer" data-i18n="openMaps">افتح موقع الفرع على Google Maps</a>
 <p class="helper" id="mapHint">اضغط لعرض موقع الفرع والاتجاهات إليه.</p>
 </div>
 </section>
 <section class="section-card">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span>تابع صفحاتنا</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><span data-i18n="followUs">تابع صفحاتنا</span></h2>
 <div class="actions social-actions">
 <a class="btn" href="https://www.facebook.com/Elfat7.Lab" target="_blank" rel="noopener noreferrer">Facebook</a>
 <a class="btn" href="https://www.instagram.com/elfat7.lab" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -303,47 +335,128 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </div>
 </section>
 <section class="section-card">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2" transform="rotate(45 12 12)"/><path d="M8 12h8M12 8v8"/></svg></span>الدفع والتحويل</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2" transform="rotate(45 12 12)"/><path d="M8 12h8M12 8v8"/></svg></span><span data-i18n="payments">الدفع والتحويل</span></h2>
 <div class="payment-card">
 <div class="payment-item">
 <span class="payment-label">InstaPay</span>
 <span class="payment-value">dr.mohamed.ahmed.93</span>
 <div class="payment-actions">
-<button class="btn btn-primary" type="button" onclick="openPaymentApp('instapay','dr.mohamed.ahmed.93')">فتح تطبيق InstaPay</button>
-<button class="btn btn-gold" type="button" onclick="copyPayment('dr.mohamed.ahmed.93')">نسخ العنوان</button>
+<button class="btn btn-primary" type="button" onclick="openPaymentApp('instapay','dr.mohamed.ahmed.93')" data-i18n="openInstapay">فتح تطبيق InstaPay</button>
+<button class="btn btn-gold" type="button" onclick="copyPayment('dr.mohamed.ahmed.93')" data-i18n="copyHandle">نسخ العنوان</button>
 </div>
 </div>
 <div class="payment-item">
 <span class="payment-label">Vodafone Cash</span>
 <span class="payment-value">01061652263</span>
 <div class="payment-actions">
-<button class="btn btn-primary" type="button" onclick="openPaymentApp('vodafone','01061652263')">فتح Ana Vodafone</button>
-<button class="btn btn-gold" type="button" onclick="copyPayment('01061652263')">نسخ الرقم</button>
+<button class="btn btn-primary" type="button" onclick="openPaymentApp('vodafone','01061652263')" data-i18n="openVodafone">فتح Ana Vodafone</button>
+<button class="btn btn-gold" type="button" onclick="copyPayment('01061652263')" data-i18n="copyNumber">نسخ الرقم</button>
 </div>
 </div>
-<p class="helper">بعد التحويل، يُرجى إرسال صورة الإيصال عبر واتساب المعمل لتأكيد استلام المبلغ.</p>
-<a class="btn btn-primary btn-full" style="margin-top:12px" href="https://wa.me/201550221951?text=%D8%AA%D9%85%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%8C%20%D9%88%D8%A3%D8%B1%D8%B3%D9%84%20%D8%A5%D9%8A%D8%B5%D8%A7%D9%84%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D9%84%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF." target="_blank" rel="noopener">إرسال إيصال التحويل عبر واتساب</a>
+<p class="helper" data-i18n="paymentNote">بعد التحويل، يُرجى إرسال صورة الإيصال عبر واتساب المعمل لتأكيد استلام المبلغ.</p>
+<a class="btn btn-primary btn-full" style="margin-top:12px" href="https://wa.me/201550221951?text=%D8%AA%D9%85%20%D8%A7%D9%84%D8%AA%D8%AD%D9%88%D9%8A%D9%84%D8%8C%20%D9%88%D8%A3%D8%B1%D8%B3%D9%84%20%D8%A5%D9%8A%D8%B5%D8%A7%D9%84%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9%20%D9%84%D9%84%D8%AA%D8%A3%D9%83%D9%8A%D8%AF." target="_blank" rel="noopener" data-i18n="sendReceipt">إرسال إيصال التحويل عبر واتساب</a>
 </div>
 </section>
 <section class="section-card wide">
-<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1Z"/></svg></span>عناوين الفروع ونقاط الاستلام</h2>
+<h2 class="section-heading"><span class="section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1Z"/></svg></span><span data-i18n="addressesTitle">عناوين الفروع ونقاط الاستلام</span></h2>
 <div class="address-list">
-<div class="address"><strong>فرع المنزلة – الدقهلية</strong><span>شارع الرياح، بجوار مسجد عبد القادر سويدان.</span></div>
-<div class="address"><strong>فرع سعود – الحسينية – الشرقية</strong><span>دائري سعود، بجوار مضيفة رسلان.</span></div>
-<div class="address"><strong>نقطة استلام الروضة – دمياط</strong><span>شارع البنزينة، أعلى مكتب خليفة.</span></div>
+<div class="address"><strong data-i18n="addr1Title">فرع المنزلة – الدقهلية</strong><span data-i18n="addr1Text">شارع الرياح، بجوار مسجد عبد القادر سويدان.</span></div>
+<div class="address"><strong data-i18n="addr2Title">فرع سعود – الحسينية – الشرقية</strong><span data-i18n="addr2Text">دائري سعود، بجوار مضيفة رسلان.</span></div>
+<div class="address"><strong data-i18n="addr3Title">نقطة استلام الروضة – دمياط</strong><span data-i18n="addr3Text">شارع البنزينة، أعلى مكتب خليفة.</span></div>
 </div>
 </section>
 </div>
 </main>
 </div>
-<footer class="footer"><span class="footer-mark">ELFAT7 LAB</span><span>معمل الفتح لتشخيص أمراض الدواجن</span><span>العلم أساس التشخيص السليم</span></footer>
+<footer class="footer"><span class="footer-mark">ELFAT7 LAB</span><span data-i18n="footerName">معمل الفتح لتشخيص أمراض الدواجن</span><span data-i18n="footerTag">العلم أساس التشخيص السليم</span></footer>
 </div>
 <script>
+
+const translations={
+ en:{
+ skip:"Skip to content",eyebrow:"Poultry Diagnostics • Laboratory Services",
+ heroTitle:"Al Fath Poultry Disease Diagnostic Laboratory",
+ heroSub:"Sound science leads to accurate diagnosis and informed decisions. Contact your nearest location, get directions and review the available payment methods.",
+ heroTag:"Scientific expertise for the poultry industry",
+ navLabel:"Main navigation",navServices:"Our Services",navWhy:"Why Al Fath?",navRequest:"Request a Test",navFaq:"FAQs",navContact:"Contact & Locations",
+ introTitle:"Laboratory Services & Contact",introSub:"Select a location to view its contact details and directions.",branchLabel:"Select a location",
+ servicesTitle:"Diagnostic Services",
+ service1Title:"Post-mortem Examination",service1Desc:"Assessment of gross and anatomical findings in correlation with the flock history and clinical signs.",
+ service2Title:"Bacterial Isolation",service2Desc:"Laboratory testing to help identify bacterial pathogens associated with the case.",
+ service3Title:"Molecular Diagnostics (PCR)",service3Desc:"Detection of selected pathogens based on the sample type and diagnostic suspicion.",
+ service4Title:"Mycotoxin Assessment",service4Desc:"Evaluation of the potential contribution of mycotoxins to the overall diagnostic picture.",
+ service5Title:"Integrated Diagnostic Assessment",service5Desc:"Correlation of examination findings, case history and laboratory results to build a clearer diagnostic picture.",
+ service6Title:"Diagnostic Decision Support",service6Desc:"Interpretation of findings in the context of the case, rather than relying on assumptions or clinical signs alone.",
+ serviceNote:"The appropriate tests are determined after reviewing the case and sample type. Please contact the laboratory to confirm test availability and turnaround time.",
+ whyTitle:"Why Choose Al Fath?",
+ why1Title:"Diagnosis Before Decisions",why1Desc:"We focus on identifying the underlying cause rather than relying on similarities in clinical signs alone.",
+ why2Title:"Multiple Diagnostic Methods",why2Desc:"Examination, post-mortem findings and laboratory testing are considered according to each case’s requirements.",
+ why3Title:"Dedicated to Poultry Health",why3Desc:"Clear communication channels through our laboratory locations and designated sample collection point.",
+ requestTitle:"Request a Test or Make an Enquiry",nameLabel:"Name",namePlaceholder:"Your name",phoneLabel:"Phone number",phonePlaceholder:"Your contact number",
+ birdsLabel:"Bird type",birdsPlaceholder:"e.g. broilers / breeders / layers",ageLabel:"Flock age",agePlaceholder:"Flock age in days",
+ governorateLabel:"Governorate",governoratePlaceholder:"Governorate",formBranchLabel:"Laboratory location or collection point",
+ detailsLabel:"Brief case description or test requested",detailsPlaceholder:"Describe the clinical signs or the test you require",
+ submitRequest:"Send Enquiry via WhatsApp",requestNote:"WhatsApp will open with your details in a message for you to review and send. Please do not include sensitive information.",
+ faqTitle:"Frequently Asked Questions",
+ faq1Q:"How do I know which test is appropriate?",faq1A:"Send the laboratory a brief case description and flock details. Our team can advise on suitable testing based on the information available.",
+ faq2Q:"What type of samples is required?",faq2A:"Sample requirements depend on the test and diagnostic suspicion. Please contact the laboratory before collecting a sample so the appropriate type, handling and transport conditions can be confirmed.",
+ faq3Q:"Can I submit a sample through the Al Rawdah collection point?",faq3A:"Al Rawdah is a sample collection point, not a full diagnostic laboratory branch. Please contact us in advance to confirm collection arrangements.",
+ faq4Q:"When will the test results be available?",faq4A:"Turnaround time varies according to the test, sample and required procedures. Please confirm the expected timeframe when requesting the test.",
+ faq5Q:"How can I follow up after submitting a sample?",faq5A:"Keep the laboratory’s contact details and reach us via WhatsApp to enquire about your request and results.",
+ contactTitle:"Contact the Laboratory",whatsappLab:"Contact us on WhatsApp",branchLocation:"Location & Directions",openMaps:"View on Google Maps",
+ followUs:"Follow Us",payments:"Payment Methods",openInstapay:"Open InstaPay",copyHandle:"Copy account handle",openVodafone:"Open Ana Vodafone",copyNumber:"Copy number",
+ paymentNote:"After making a payment, please send a copy of the receipt to the laboratory’s WhatsApp number for confirmation.",sendReceipt:"Send Payment Receipt via WhatsApp",
+ addressesTitle:"Laboratory Locations & Sample Collection",addr1Title:"Al Manzala Branch – Dakahlia",addr1Text:"Al Riyah Street, next to Abdul Qader Sweidan Mosque.",
+ addr2Title:"Saud Branch – Al Husseiniya – Sharqia",addr2Text:"Saud Ring Road, next to Raslan Guesthouse.",
+ addr3Title:"Al Rawdah Sample Collection Point – Damietta",addr3Text:"Al Benzina Street, above Khalifa Office.",
+ footerName:"Al Fath Poultry Disease Diagnostic Laboratory",footerTag:"Sound science for accurate diagnosis",
+ mapManzala:"Al Manzala Branch – Dakahlia | Al Riyah Street, next to Abdul Qader Sweidan Mosque.",
+ mapSaud:"Saud Branch – Al Husseiniya – Sharqia | Saud Ring Road, next to Raslan Guesthouse.",
+ mapRawdah:"Al Rawdah Sample Collection Point – Damietta | Al Benzina Street, above Khalifa Office.",
+ copied:"Payment details copied.",copyFailed:"Automatic copying was unavailable. Please select and copy the details manually.",
+ formTitle:"Test Request / Enquiry – Al Fath Laboratory",formName:"Name",formPhone:"Phone",formBirds:"Bird type",formAge:"Flock age",formGovernorate:"Governorate",formLocation:"Laboratory location / collection point",formDetails:"Case details",notSpecified:"Not specified",notProvided:"Not provided"
+ },
+ ar:{
+ skip:"تجاوز إلى المحتوى",eyebrow:"تشخيص معملي موثوق • خدمة ومتابعة",heroTitle:"معمل الفتح لتشخيص أمراض الدواجن",
+ heroSub:"العلم أساس التشخيص السليم والقرار الصحيح. تواصل مع أقرب فرع، واعرف موقعه، واطّلع على وسائل الدفع المعتمدة.",
+ heroTag:"خبرة علمية لخدمة قطاع الدواجن",navLabel:"التنقل داخل الموقع",navServices:"الخدمات",navWhy:"لماذا المعمل؟",navRequest:"طلب فحص",navFaq:"الأسئلة الشائعة",navContact:"التواصل والفروع",
+ introTitle:"خدمات المعمل ووسائل التواصل",introSub:"اختر الفرع أولًا لتظهر لك بيانات التواصل والموقع.",branchLabel:"الفرع الذي تتواصل معه",
+ servicesTitle:"خدماتنا التشخيصية",service1Title:"الفحص والتشريح المرضي",service1Desc:"تقييم التغيرات الظاهرية والتشريحية وربطها بتاريخ الحالة وأعراضها.",
+ service2Title:"العزل البكتيري",service2Desc:"فحوصات معملية للمساعدة في تحديد المسببات البكتيرية المرتبطة بالحالة.",
+ service3Title:"الفحوصات الجزيئية PCR",service3Desc:"الكشف عن المسببات المستهدفة وفقًا لنوع العينة والاشتباه التشخيصي.",
+ service4Title:"تقييم السموم الفطرية",service4Desc:"دراسة احتمالية مساهمة السموم الفطرية ضمن الصورة التشخيصية للحالة.",
+ service5Title:"التقييم التشخيصي المتكامل",service5Desc:"ربط نتائج الفحص والتاريخ المرضي والاختبارات المعملية للوصول إلى صورة أوضح.",
+ service6Title:"دعم القرار التشخيصي",service6Desc:"توضيح دلالة النتائج في ضوء الحالة، دون الاعتماد على التخمين أو عرض الأعراض وحدها.",
+ serviceNote:"تُحدد الفحوصات المناسبة بعد مراجعة الحالة ونوع العينة، وتُؤكد إتاحة كل اختبار ومدته بالتواصل مع المعمل.",
+ whyTitle:"لماذا معمل الفتح؟",why1Title:"التشخيص أساس القرار",why1Desc:"الاهتمام بالوصول إلى المسبب، وليس الاكتفاء بتشابه الأعراض.",
+ why2Title:"أكثر من أداة للفحص",why2Desc:"الاستفادة من الفحص والتشريح والاختبارات المعملية بحسب متطلبات كل حالة.",
+ why3Title:"خدمة قطاع الدواجن",why3Desc:"قنوات تواصل واضحة مع فروع المعمل ونقطة استلام العينات.",
+ requestTitle:"طلب فحص أو استفسار",nameLabel:"الاسم",namePlaceholder:"اسمك",phoneLabel:"رقم الهاتف",phonePlaceholder:"رقم للتواصل",
+ birdsLabel:"نوع الطيور",birdsPlaceholder:"مثل: تسمين / أمهات / بياض",ageLabel:"العمر",agePlaceholder:"عمر القطيع بالأيام",
+ governorateLabel:"المحافظة",governoratePlaceholder:"المحافظة",formBranchLabel:"الفرع أو نقطة الاستلام",detailsLabel:"وصف مختصر للحالة أو الفحص المطلوب",
+ detailsPlaceholder:"اكتب الأعراض أو نوع الفحص المطلوب",submitRequest:"إرسال الطلب عبر واتساب",requestNote:"سيتم فتح واتساب برسالة تحتوي على البيانات التي أدخلتها لمراجعتها وإرسالها بنفسك. لا تُرسل بيانات حساسة.",
+ faqTitle:"أسئلة شائعة",faq1Q:"كيف أعرف الفحص المناسب للحالة؟",faq1A:"أرسل وصفًا مختصرًا للحالة وبيانات القطيع للمعمل، وسيتم إرشادك إلى الفحص المناسب وفق المعلومات المتاحة.",
+ faq2Q:"ما نوع العينات المطلوبة؟",faq2A:"تختلف العينة حسب الفحص والاشتباه التشخيصي؛ يُرجى التواصل مع المعمل قبل تجهيز العينة لتحديد النوع وطريقة الحفظ والنقل.",
+ faq3Q:"هل يمكن إرسال عينة من خلال نقطة الروضة؟",faq3A:"الروضة مُدرجة كنقطة استلام، وليست فرعًا تشخيصيًا كاملًا. يُرجى التواصل مسبقًا لتأكيد ترتيبات الاستلام.",
+ faq4Q:"متى تظهر نتيجة الفحص؟",faq4A:"تختلف المدة حسب نوع الاختبار والعينة والإجراءات المطلوبة. يُرجى تأكيد المدة المتوقعة عند طلب الفحص.",
+ faq5Q:"كيف أتابع بعد إرسال العينة؟",faq5A:"احتفظ ببيانات التواصل مع المعمل، وتواصل عبر واتساب للاستفسار عن حالة الطلب والنتيجة.",
+ contactTitle:"تواصل مع المعمل",whatsappLab:"واتساب المعمل",branchLocation:"موقع الفرع",openMaps:"افتح موقع الفرع على Google Maps",
+ followUs:"تابع صفحاتنا",payments:"الدفع والتحويل",openInstapay:"فتح تطبيق InstaPay",copyHandle:"نسخ العنوان",openVodafone:"فتح Ana Vodafone",copyNumber:"نسخ الرقم",
+ paymentNote:"بعد التحويل، يُرجى إرسال صورة الإيصال عبر واتساب المعمل لتأكيد استلام المبلغ.",sendReceipt:"إرسال إيصال التحويل عبر واتساب",
+ addressesTitle:"عناوين الفروع ونقاط الاستلام",addr1Title:"فرع المنزلة – الدقهلية",addr1Text:"شارع الرياح، بجوار مسجد عبد القادر سويدان.",
+ addr2Title:"فرع سعود – الحسينية – الشرقية",addr2Text:"دائري سعود، بجوار مضيفة رسلان.",addr3Title:"نقطة استلام الروضة – دمياط",addr3Text:"شارع البنزينة، أعلى مكتب خليفة.",
+ footerName:"معمل الفتح لتشخيص أمراض الدواجن",footerTag:"العلم أساس التشخيص السليم",
+ mapManzala:"فرع المنزلة – الدقهلية | شارع الرياح – بجوار مسجد عبد القادر سويدان.",mapSaud:"فرع سعود – الحسينية – الشرقية | دائري سعود – بجوار مضيفة رسلان.",mapRawdah:"نقطة استلام الروضة – دمياط | شارع البنزينة – أعلى مكتب خليفة.",
+ copied:"تم نسخ بيانات التحويل.",copyFailed:"تعذر النسخ تلقائيًا. يمكنك تحديد البيانات ونسخها يدويًا.",
+ formTitle:"طلب فحص / استفسار - معمل الفتح",formName:"الاسم",formPhone:"الهاتف",formBirds:"نوع الطيور",formAge:"العمر",formGovernorate:"المحافظة",formLocation:"الفرع/نقطة الاستلام",formDetails:"تفاصيل الحالة",notSpecified:"غير محدد",notProvided:"لم يُذكر"
+ }
+};
+
 const branch=document.getElementById('branch');
 const branchData={
- mansoura:{wa:'201550221951',url:'https://maps.app.goo.gl/GmRsHDzAtVmJLrr28?g_st=aw',hint:'فرع المنزلة – الدقهلية | شارع الرياح – بجوار مسجد عبد القادر سويدان.'},
- husseiniya:{wa:'201550221951',url:'https://maps.app.goo.gl/rzrfcCtuMqJpiYpa8?g_st=aw',hint:'فرع سعود – الحسينية – الشرقية | دائري سعود – بجوار مضيفة رسلان.'},
- rawdah:{wa:'201550221951',url:'https://maps.app.goo.gl/sTTHDb9cDS5UMy6m9?g_st=aw',hint:'نقطة استلام الروضة – دمياط | شارع البنزينة – أعلى مكتب خليفة.'}
+ mansoura:{wa:'201550221951',url:'https://maps.app.goo.gl/GmRsHDzAtVmJLrr28?g_st=aw',hint:'فرع المنزلة – الدقهلية | شارع الرياح – بجوار مسجد عبد القادر سويدان.',enHint:translations.en.mapManzala},
+ husseiniya:{wa:'201550221951',url:'https://maps.app.goo.gl/rzrfcCtuMqJpiYpa8?g_st=aw',hint:'فرع سعود – الحسينية – الشرقية | دائري سعود – بجوار مضيفة رسلان.',enHint:translations.en.mapSaud},
+ rawdah:{wa:'201550221951',url:'https://maps.app.goo.gl/sTTHDb9cDS5UMy6m9?g_st=aw',hint:'نقطة استلام الروضة – دمياط | شارع البنزينة – أعلى مكتب خليفة.',enHint:translations.en.mapRawdah}
 };
 const params=new URLSearchParams(location.search);
 if(params.get('branch')&&branchData[params.get('branch')])branch.value=params.get('branch');
@@ -354,14 +467,14 @@ function applyBranch(){
  document.getElementById('call2').href='tel:+201062658455';
  document.getElementById('call3').href='tel:+201550221951';
  document.getElementById('mapLink').href=b.url;
- document.getElementById('mapHint').textContent=b.hint;
+ document.getElementById('mapHint').textContent=document.documentElement.lang==='en'?b.enHint:b.hint;
 }
 async function copyPayment(value){
- try{await navigator.clipboard.writeText(value);alert('تم نسخ بيانات التحويل.');}
+ try{await navigator.clipboard.writeText(value);alert(translations[document.documentElement.lang].copied);}
  catch(e){
   const field=document.createElement('textarea');field.value=value;document.body.appendChild(field);field.select();
   try{document.execCommand('copy');alert('تم نسخ بيانات التحويل.');}
-  catch(err){alert('تعذر النسخ تلقائيًا. يمكنك تحديد البيانات ونسخها يدويًا.');}
+  catch(err){alert(translations[document.documentElement.lang].copyFailed);}
   field.remove();
  }
 }
@@ -379,6 +492,34 @@ document.getElementById('requestForm').addEventListener('submit',function(e){
  const lines=['طلب فحص / استفسار - معمل الفتح','الاسم: '+(d.get('name')||''),'الهاتف: '+(d.get('phone')||''),'نوع الطيور: '+(d.get('birds')||'غير محدد'),'العمر: '+(d.get('age')||'غير محدد'),'المحافظة: '+(d.get('governorate')||'غير محددة'),'الفرع/نقطة الاستلام: '+(d.get('branch')||''),'تفاصيل الحالة: '+(d.get('details')||'لم يُذكر')];
  window.open('https://wa.me/201550221951?text='+encodeURIComponent(lines.join('\\n')),'_blank','noopener');
 });
+
+function setLanguage(lang){
+ const t=translations[lang]||translations.ar;
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+ document.title=lang==='en'?'Al Fath | Poultry Disease Diagnostics':'معمل الفتح | تشخيص أمراض الدواجن';
+ document.querySelector('meta[name="description"]').content=lang==='en'
+ ?'Al Fath Poultry Disease Diagnostic Laboratory — poultry diagnostic services, laboratory testing, contact details and test requests.'
+ :'معمل الفتح لتشخيص أمراض الدواجن — خدمات التشخيص المعملي، الفحوصات، التواصل وطلب الفحص.';
+ document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(t[k]!==undefined)el.textContent=t[k];});
+ document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.getAttribute('data-i18n-placeholder');if(t[k]!==undefined)el.placeholder=t[k];});
+ document.querySelectorAll('[data-i18n-aria]').forEach(el=>{const k=el.getAttribute('data-i18n-aria');if(t[k]!==undefined)el.setAttribute('aria-label',t[k]);});
+ const opts=branch.options;
+ opts[0].textContent=lang==='en'?'Al Manzala – Dakahlia':'المنزلة – الدقهلية';
+ opts[1].textContent=lang==='en'?'Saud – Al Husseiniya – Sharqia':'سعود – الحسينية – الشرقية';
+ opts[2].textContent=lang==='en'?'Al Rawdah Collection Point – Damietta':'نقطة استلام الروضة – دمياط';
+ const fopts=document.querySelectorAll('select[name="branch"] option');
+ fopts[0].textContent=opts[0].textContent;fopts[1].textContent=opts[1].textContent;fopts[2].textContent=opts[2].textContent;
+ document.getElementById('langAr').classList.toggle('active',lang==='ar');
+ document.getElementById('langEn').classList.toggle('active',lang==='en');
+ document.getElementById('langAr').setAttribute('aria-pressed',String(lang==='ar'));
+ document.getElementById('langEn').setAttribute('aria-pressed',String(lang==='en'));
+ localStorage.setItem('elfat7-language',lang);
+ applyBranch();
+}
+document.getElementById('langAr').addEventListener('click',()=>setLanguage('ar'));
+document.getElementById('langEn').addEventListener('click',()=>setLanguage('en'));
+
 branch.addEventListener('change',applyBranch);
 applyBranch();
 </script>
